@@ -1,5 +1,5 @@
 <%-- 
-    Document   : home
+    Document   : index
     Created on : 28-may-2022, 15:03:11
     Author     : Javier Snz
     Diseño basado en: https://www.youtube.com/watch?v=ac5nmWOkBEY&t=0s
@@ -12,7 +12,15 @@
 
 <!DOCTYPE html>
 <html>
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="css/indexStyle.css">
+        <link rel="stylesheet" href="css/headerStyle.css">
+    </head>
     <body>
+        <div id="header"></div>
         <div id="home">
             <section class="banner" id="banner">
                 <div class="content left">
@@ -46,6 +54,8 @@
                         ProductDAO productDAO = new ProductDAO();
                         List<Product> productList = productDAO.listProduct();
                         Iterator<Product> iteratorProduct = productList.iterator();
+                        System.out.println("-----------------------------------------------------------------");
+                        System.out.println(productList.size());
                         Product product = null;
                         String imgUrl = "";
                         int i = 0;
@@ -155,5 +165,11 @@
                 </div>
             </section>
         </div>
+
+        <div class="copyrighText">
+            <p>Copyright 2022 Onine Tutorials. All right Reserved </p>
+        </div>
+
+        <script src="js/headerCode.js"></script>
     </body>
 </html>

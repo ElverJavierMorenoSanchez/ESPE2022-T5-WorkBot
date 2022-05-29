@@ -1,11 +1,11 @@
-function uploadContect(url, elemento) {
+function uploadContent(url, elemento) {
     var request = new XMLHttpRequest();
     request.open("GET", url, false);
     request.send(null);
     elemento.innerHTML = request.responseText;
 }
 
-uploadContect("jsps/home.jsp", document.querySelector(".dinamicContent"));
+uploadContent("jsps/header.jsp", document.querySelector('#header'));
 
 window.addEventListener('scroll', function () {
     const header = document.querySelector('header');
@@ -18,4 +18,5 @@ function toggleMenu() {
     menuToggle.classList.toggle('active');
     navigation.classList.toggle('active');
 }
+
 

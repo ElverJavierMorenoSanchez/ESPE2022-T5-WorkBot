@@ -29,10 +29,12 @@ public class ProductDAO implements ProductCrud {
 
         try {
             mongoDatabase = connectionMongoDB.getMongoDatabase();
-            MongoCollection collection = mongoDatabase.getCollection("Productos");
+            MongoCollection collection = mongoDatabase.getCollection("Products");
             FindIterable<Document> findIterable = collection.find(new Document());
             MongoCursor<Document> mongoCursor = findIterable.iterator();
-
+            
+            
+            
             while (mongoCursor.hasNext()) {
                 Document docObject = mongoCursor.next();
                 product = new Product();
