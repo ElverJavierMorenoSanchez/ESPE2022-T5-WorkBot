@@ -1,0 +1,118 @@
+header{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 40px 100px;
+    z-index: 100000;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: .3s;
+}
+header.sticky{
+    background: #fff;
+    padding: 10px 100px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, .05);
+}
+header .logo{
+    color: #fff;
+    font-weight: 700;
+    font-size: 2em;
+    text-decoration: none;
+}
+header.sticky .logo{
+    color: #111;
+}
+header .logo span{
+    color: #ff0156;
+}
+header .navigation{
+    position: relative;
+    display: flex;
+    margin-right: 100px;
+}
+header .navigation li{
+    list-style: none;
+    margin-right: 30px;
+    transition: .5s;
+    font-size: 1.08em;
+}
+header .navigation li:hover{
+    transform: translateY(-5px);
+}
+header .navigation li a{
+    text-decoration: none;
+    color: #fff;
+    font-weight: 300;
+    transition: 0.3s;
+}
+header.sticky .navigation li a{
+    color: #111;
+    transition: 0.5s;
+}
+header .navigation li a:hover{
+    color: #F73375;
+}
+header.sticky .shoppingCart .icon, 
+header.sticky .shoppingCart .cont
+{
+    color: #111;
+    transition: 0.5s;
+}
+.btn{
+    font-size: 1em;
+    color: #fff;
+    background: #ff0157;
+    display: inline-block;
+    padding: 10px 30px;
+    margin-top: 20px;
+    text-transform: uppercase;
+    text-decoration: none;
+    letter-spacing: 2px;
+    transition: .5s;
+}
+.btn.singIn{
+    margin: 0;
+}
+.btn:hover{
+    letter-spacing: 6px;
+}
+.shoppingCart{
+    position: absolute;
+    display: flex;
+    height: 40px;
+    width: 40px;
+    justify-content: center;
+    align-items: center;
+    margin-left: 66%;
+    text-align: center;
+    transition: 0.5s;
+}
+.shoppingCart .icon{
+    margin: auto;
+    justify-content: center;
+    align-items: center;
+    font-size: 2em;
+    text-align: center;
+    transition: 0.5s;
+    color: white;
+}
+.shoppingCart .cont{
+    margin: auto;
+    font-size: 1.25em;
+    padding-left: 3px;
+    text-align: center;
+    transition: 0.5s;
+    color: white;
+}
+ header.sticky .shoppingCart:hover,
+ .shoppingCart:hover {
+    transform: translateY(-5px);
+}
+
+header.sticky .shoppingCart .icon:hover,
+.shoppingCart .icon:hover
+{
+    color: #ff0157;
+}
