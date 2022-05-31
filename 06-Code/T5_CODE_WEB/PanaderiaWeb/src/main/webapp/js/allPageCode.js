@@ -7,6 +7,7 @@ function uploadContent(url, elemento) {
 
 uploadContent("jsps/header.jsp", document.querySelector('#header'));
 uploadContent("jsps/footer.jsp", document.querySelector('#footer'));
+$(".shoppingCart").hide();
 
 window.addEventListener('scroll', function () {
     const header = document.querySelector('header');

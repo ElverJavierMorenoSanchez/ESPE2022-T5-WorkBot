@@ -24,7 +24,11 @@
             </span>
         </a>
         <div class="cont"><h3>0</h3></div>
-
+        <div class="cartOptions">
+            <div class="totalCash"><h2>TOTAL:</h2><h2>$0.0</h2></div>
+            <div class="btn checkIn"><h3>FACTURACION</h3></div>
+        </div>
     </div>
-    <a href="#" class="btn singIn">INICAR SESIÓN</a>
+
+    <a href="#" class="singIn">INICAR SESIÓN</a>
 </header>

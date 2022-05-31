@@ -19,6 +19,7 @@
         <link rel="stylesheet" href="css/headerStyle.css">
         <link rel="stylesheet" href="css/productStyle.css">
         <link rel="stylesheet" href="css/footerStyle.css">
+        <script src="js/jquery-3.6.0.min.js"></script>
     </head>
     <body>
         <div id="header"></div>
@@ -85,6 +86,8 @@
 
         <div id="footer"></div>
         <script src="js/allPageCode.js"></script>
+        <script src="js/productsCode.js"></script>
+        <script type="text/javascript" src="js/headerCode.js"></script>
         <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
         <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
     </body>

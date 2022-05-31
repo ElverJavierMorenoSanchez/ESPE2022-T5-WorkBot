@@ -3,17 +3,17 @@
     Author     : Javier Snz
 */
 #header{
-	width: 100%;
-	height: 128px;
-	background: url(../img/bg/bg5.jpg);
+    width: 100%;
+    height: 128px;
+    background: url(../img/bg/bg5.jpg);
 }
 section {
     padding: 70px 100px 100px;
 }
 .products h2{
-	text-align: center;
-	margin-top: 70px;
-	font-size: 3em;
+    text-align: center;
+    margin-top: 70px;
+    font-size: 3em;
 }
 .titleText{
     color: #111;
@@ -85,6 +85,7 @@ section {
     width: 100%;
     height: 100%;
     transition: 0.5s;
+    align-items: left;
 }
 .productsList .optionCart .button{
     position: relative;
@@ -109,6 +110,7 @@ section {
     font-weight: 400;
     font-size: 0.8em;
     letter-spacing: 1px;
+    user-select: none;
 }
 .productsList .optionCart:hover{
     background: rgba(0, 0, 0, 0.3);
@@ -122,5 +124,6 @@ section {
 .productsList .optionCart .button:hover h3,
 .productsList .optionCart .button:hover span
 {
-    color: #fff;;
+    color: #fff;
+    ;
 }
