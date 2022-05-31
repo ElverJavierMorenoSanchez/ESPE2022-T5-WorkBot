@@ -4,8 +4,13 @@
     Author     : Javier Snz
 --%>
 
+<%@page import="Model.User"%>
+<%@page import="Model.AuxUser"%>
+<%@page import="Controller.Controlador"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
+
+
 
 <header>
     <a href="#" class="logo">Dulcemente Pasteles<span>.</span></a>
@@ -29,6 +34,31 @@
             <div class="btn checkIn"><h3>FACTURACION</h3></div>
         </div>
     </div>
-
-    <a href="#" class="singIn">INICAR SESIÓN</a>
+    <%
+        AuxUser.getAuxUser();
+        if (AuxUser.getAuxUser().getUser() == null) {
+    %>
+    <a href="Controlador?accion=newUser" class="singIn">INICAR SESIÓN</a>
+    <%} else {%>
+    <div class="buttonLogin"></div>
+    <div class="navigationUser">
+        <div class="userBx">
+            <div class="imgBx">
+                <img src="img/perfil/testi1.jpg" alt="">
+            </div>
+            <p class="username"> <%= AuxUser.getAuxUser().getUser().getName()%> </p>
+        </div>
+        <div class="menuToggle"></div>
+        <ul class="menu">
+            <li><a href=""><ion-icon name="person-outline"></ion-icon> Mi perfil</a></li>
+            <li><a href=""><ion-icon name="notifications-outline"></ion-icon>Notificaciones</a></li>
+            <li><a href=""><ion-icon name="notifications-outline"></ion-icon>Ayuda</a></li>
+            <li><a href=""><ion-icon name="settings-outline"></ion-icon>Configuraciones</a></li>
+            <li><a href="Controlador?accion=closeSesion"><ion-icon name="log-out-outline"></ion-icon>Cerrar Sesión</a></li>
+        </ul>
+    </div>
+    <script>
+        $(".buttonLogin").hide();
+    </script>
+    <%}%>
 </header>

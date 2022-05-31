@@ -8,7 +8,7 @@ function uploadContent(url, elemento) {
 uploadContent("jsps/header.jsp", document.querySelector('#header'));
 uploadContent("jsps/footer.jsp", document.querySelector('#footer'));
 
-$(document).ready(function(){
+$(document).ready(function () {
     $(".shoppingCart").hide();
 });
 
@@ -24,4 +24,9 @@ function toggleMenu() {
     navigation.classList.toggle('active');
 }
 
+let menuToggle = $('.menuToggle');
+let navigationUser = $('.navigationUser');
 
+menuToggle.click(function () {
+    navigationUser.toggleClass('active');
+});

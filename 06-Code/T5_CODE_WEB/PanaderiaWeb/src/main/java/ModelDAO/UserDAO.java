@@ -6,10 +6,13 @@ package ModelDAO;
 
 import ConnectionDB.ConnectionMongoDB;
 import Interfaces.UserCrud;
+import Model.AuxUser;
 import Model.User;
 import com.mongodb.MongoException;
+import com.mongodb.client.FindIterable;
 import com.mongodb.client.MongoCollection;
 import com.mongodb.client.MongoDatabase;
+import static com.mongodb.client.model.Filters.*;
 import java.sql.ResultSet;
 import org.bson.Document;
 
@@ -17,26 +20,26 @@ import org.bson.Document;
  *
  * @author RobertoCarlos
  */
-public class UserDAO implements UserCrud{
+public class UserDAO implements UserCrud {
+
     ConnectionMongoDB connectionMongoDB = new ConnectionMongoDB();
     MongoDatabase mongoDatabase;
     ResultSet resultSet;
     User user;
-    
+
     @Override
     public boolean addUser(User user) {
-      String query = "{"
-                + "name: " +"'"+ user.getName() +"'"+ ","
-                + "surname: " +"'"+ user.getSurname() +"'"+ ","
-                + "address: " +"'"+ user.getAddress() +"'"+ ","
-                + "city: " +"'"+ user.getAddress() +"'"+ ","
-                + "phone: " +"'"+ user.getAddress() +"'"+ ","
-                + "email: " +"'"+ user.getAddress() +"'"+ ","
-                + "username: " +"'"+ user.getAddress() +"'"+ ","
-                + "password: " +"'"+ user.getAddress() +"'"
-                 +"}";
-      //String query = "{name: 'jose'}";
-              
+        String query = "{"
+                + "name: " + "'" + user.getName() + "'" + ","
+                + "surname: " + "'" + user.getSurname() + "'" + ","
+                + "address: " + "'" + user.getAddress() + "'" + ","
+                + "city: " + "'" + user.getAddress() + "'" + ","
+                + "phone: " + "'" + user.getAddress() + "'" + ","
+                + "email: " + "'" + user.getAddress() + "'" + ","
+                + "username: " + "'" + user.getAddress() + "'" + ","
+                + "password: " + "'" + user.getAddress() + "'"
+                + "}";
+
         try {
             mongoDatabase = connectionMongoDB.getMongoDatabase();
             MongoCollection collection = mongoDatabase.getCollection("User");
@@ -47,7 +50,6 @@ public class UserDAO implements UserCrud{
 
         return false;
     }
-    
 
     @Override
     public boolean updateUser(User user) {
@@ -58,5 +60,39 @@ public class UserDAO implements UserCrud{
     public boolean deleteUser(User user) {
         throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
     }
-    
+
+    @Override
+    public boolean findUser(User user) {
+        boolean band = false;
+
+        try {
+            mongoDatabase = connectionMongoDB.getMongoDatabase();
+            MongoCollection collection = mongoDatabase.getCollection("User");
+
+            FindIterable<Document> findIterable = collection.find(
+                    and(or(eq("email", user.getEmail()), eq("username", user.getUsername())),
+                            eq("password", user.getPassword())));
+
+            if (findIterable.first() != null) {
+                AuxUser.getAuxUser();
+                
+                user.setName(findIterable.first().getString("name"));
+                user.setSurname(findIterable.first().getString("surname"));
+                user.setAddress(findIterable.first().getString("address"));
+                user.setCity(findIterable.first().getString("city"));
+                user.setPhone(findIterable.first().getString("phone"));
+                user.setEmail(findIterable.first().getString("email"));
+                user.setUsername(findIterable.first().getString("username"));
+                user.setPassword(findIterable.first().getString("password"));
+                
+                AuxUser.getAuxUser().setUser(user);
+                band = true;
+            }
+
+        } catch (MongoException e) {
+            System.out.println("Error" + e);
+        }
+
+        return band;
+    }
 }

@@ -4,8 +4,11 @@
  */
 package Controller;
 
+import Model.AuxUser;
 import Model.Product;
+import Model.User;
 import ModelDAO.ProductDAO;
+import ModelDAO.UserDAO;
 import java.io.IOException;
 import java.io.PrintWriter;
 import javax.servlet.RequestDispatcher;
@@ -21,12 +24,16 @@ import javax.servlet.http.HttpServletResponse;
  */
 @WebServlet(name = "Controlador", urlPatterns = {"/Controlador"})
 public class Controlador extends HttpServlet {
-
+    
     String home = "index.jsp";
     String products = "jsps/products.jsp";
-    String adminProduct = "jsps/product.jsp";
+    String adminProduct = "jsps/adminProduct.jsp";
+    String newUser = "jsps/newUser.jsp";
+    String login = "jsps/login.jsp";
     Product product = new Product();
+    User user = new User();
     ProductDAO productDAO = new ProductDAO();
+    UserDAO userDAO = new UserDAO();
     int id;
 
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
@@ -49,10 +56,11 @@ public class Controlador extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-
+        
+        AuxUser.getAuxUser();
         String access = "";
-        String acction = request.getParameter("accion");
-        switch (acction) {
+        String accion = request.getParameter("accion");
+        switch (accion) {
             case "home": {
                 access = home;
             }
@@ -61,7 +69,18 @@ public class Controlador extends HttpServlet {
                 access = products;
             }
             break;
-            case "Agregar": {
+            case "adminProduct":{
+                access = adminProduct;
+            }
+            break;
+            case "newUser":{
+                access = newUser;
+            }
+            break;
+            case "login":{
+                access = login;
+            }
+            case "addProduct": {
                 String name = request.getParameter("name");
                 double price = Float.parseFloat(request.getParameter("price"));
                 int quantity = Integer.parseInt(request.getParameter("quantity"));
@@ -73,17 +92,57 @@ public class Controlador extends HttpServlet {
                 productDAO.addProduct(product);
             }
             break;
-            
-            case "adminProduct":{
-                access = adminProduct;
+            case "addUser": {
+                String name = request.getParameter("name");
+                String surname = request.getParameter("surname");
+                String address = request.getParameter("address");
+                String city = request.getParameter("city");
+                String phone = request.getParameter("phone");
+                String email = request.getParameter("email");
+                String username = request.getParameter("username");
+                String password = request.getParameter("password");
+
+                user.setName(name);
+                user.setSurname(surname);
+                user.setAddress(address);
+                user.setCity(city);
+                user.setPhone(phone);
+                user.setEmail(email);
+                user.setUsername(username);
+                user.setPassword(password);
+                
+                AuxUser.getAuxUser().setUser(user);
+                userDAO.addUser(user);
             }
+            break;
+            case "validationUser":{
+                String email = request.getParameter("email");
+                String username = request.getParameter("username");
+                String password = request.getParameter("password");
+                
+                user.setEmail(email);
+                user.setSurname(username);
+                user.setPassword(password);
+                
+                if(userDAO.findUser(user)){
+                    AuxUser.getAuxUser().setUser(user);
+                    access = home;
+                }else{
+                    access = products;
+                }
+            }
+            break;
+            case "closeSesion": {
+                access = home;
+                AuxUser.getAuxUser().setUser(null);
+            }
+            break;
         }
 
         RequestDispatcher view = request.getRequestDispatcher(access);
         view.forward(request, response);
 
         processRequest(request, response);
-
     }
 
     @Override

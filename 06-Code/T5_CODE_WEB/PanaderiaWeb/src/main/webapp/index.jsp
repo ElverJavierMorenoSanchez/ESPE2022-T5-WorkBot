@@ -18,6 +18,7 @@
         <title>TODO supply a title</title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script src="js/jquery-3.6.0.min.js"></script>
         <link rel="stylesheet" href="css/allPageStyle.css">
         <link rel="stylesheet" href="css/indexStyle.css">
         <link rel="stylesheet" href="css/headerStyle.css">
@@ -170,7 +171,6 @@
 
         <div id="footer"></div>
         
-        <script src="js/jquery-3.6.0.min.js"></script>
         <script src="js/allPageCode.js"></script>
         <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
         <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>

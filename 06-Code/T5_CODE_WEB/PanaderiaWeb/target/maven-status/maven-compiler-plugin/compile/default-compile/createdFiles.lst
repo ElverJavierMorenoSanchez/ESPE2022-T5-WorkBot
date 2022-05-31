@@ -1,15 +1,10 @@
 Model\Product.class
 ConnectionDB\ConnectionMongoDB.class
-<<<<<<< HEAD
-Controller\Controlador.class
-Model\User.class
-ModelDAO\ProductDAO.class
-Interfaces\UserCrud.class
-=======
 ModelDAO\ProductDAO.class
 Interfaces\ProductCrud.class
 com\workbot\panaderiaweb\resources\JakartaEE8Resource.class
 Controller\Controlador.class
->>>>>>> fee802fd713178d4881f31133241cdd6ddd57bfd
+Model\User.class
+Interfaces\UserCrud.class
 com\workbot\panaderiaweb\JakartaRestConfiguration.class
 ModelDAO\UserDAO.class
