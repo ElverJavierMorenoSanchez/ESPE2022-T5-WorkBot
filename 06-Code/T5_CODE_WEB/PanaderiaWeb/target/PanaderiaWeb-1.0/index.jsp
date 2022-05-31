@@ -4,6 +4,8 @@
     Author     : Javier Snz
     Diseño basado en: https://www.youtube.com/watch?v=ac5nmWOkBEY&t=0s
 --%>
+<%@page import="ModelDAO.UserDAO"%>
+<%@page import="Model.User"%>
 <%@page import="java.util.Iterator"%>
 <%@page import="java.util.List"%>
 <%@page import="Model.Product"%>
@@ -21,7 +23,7 @@
         <link rel="stylesheet" href="css/headerStyle.css">
         <link rel="stylesheet" href="css/footerStyle.css">
     </head>
-    <body>
+    <body>  
         <div id="header"></div>
         <div id="home">
             <section class="banner" id="banner">
