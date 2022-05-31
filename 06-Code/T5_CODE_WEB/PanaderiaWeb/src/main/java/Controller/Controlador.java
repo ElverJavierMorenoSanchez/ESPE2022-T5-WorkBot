@@ -24,6 +24,7 @@ public class Controlador extends HttpServlet {
 
     String home = "index.jsp";
     String products = "jsps/products.jsp";
+    String adminProduct = "jsps/product.jsp";
     Product product = new Product();
     ProductDAO productDAO = new ProductDAO();
     int id;
@@ -72,6 +73,10 @@ public class Controlador extends HttpServlet {
                 productDAO.addProduct(product);
             }
             break;
+            
+            case "adminProduct":{
+                access = adminProduct;
+            }
         }
 
         RequestDispatcher view = request.getRequestDispatcher(access);
