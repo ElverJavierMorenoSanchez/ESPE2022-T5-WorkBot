@@ -82,9 +82,12 @@ public class ProductDAO implements ProductCrud {
     @Override
     public boolean addProduct(Product product) {
         String query = "{"
-                + "name: " + product.getName() + ","
-                + "price: " + product.getPrice() + ","
-                + "address: " + product.getQuantity() + ","
+                + "name: " +"'"+ product.getName() + "'"+","
+                + "price: " +"'"+ product.getPrice() + "'"+","
+                + "quantity: " +"'"+ product.getQuantity() + "'"+","
+                + "category: " +"'"+ product.getCategory() + "'"+","
+                + "description: " +"'"+ product.getDescription() + "'"+","
+                + "imgUrl: " +"'"+ product.getImgUrl() + "'"+","
                 + "}";
         
         try {
