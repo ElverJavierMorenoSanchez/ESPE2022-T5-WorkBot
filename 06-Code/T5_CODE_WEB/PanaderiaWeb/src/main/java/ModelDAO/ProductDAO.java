@@ -86,7 +86,7 @@ public class ProductDAO implements ProductCrud {
                 + "price: " + product.getPrice() + ","
                 + "address: " + product.getQuantity() + ","
                 + "}";
-
+        
         try {
             mongoDatabase = connectionMongoDB.getMongoDatabase();
             MongoCollection collection = mongoDatabase.getCollection("Productos");

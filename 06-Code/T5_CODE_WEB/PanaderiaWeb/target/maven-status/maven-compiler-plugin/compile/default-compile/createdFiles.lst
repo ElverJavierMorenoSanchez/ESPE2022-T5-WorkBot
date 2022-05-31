@@ -3,5 +3,8 @@ Model\Product.class
 com\workbot\panaderiaweb\resources\JakartaEE8Resource.class
 ConnectionDB\ConnectionMongoDB.class
 Controller\Controlador.class
+Model\User.class
 ModelDAO\ProductDAO.class
+Interfaces\UserCrud.class
 com\workbot\panaderiaweb\JakartaRestConfiguration.class
+ModelDAO\UserDAO.class
