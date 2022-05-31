@@ -1,7 +1,7 @@
-Interfaces\ProductCrud.class
 Model\Product.class
-com\workbot\panaderiaweb\resources\JakartaEE8Resource.class
 ConnectionDB\ConnectionMongoDB.class
-Controller\Controlador.class
 ModelDAO\ProductDAO.class
+Interfaces\ProductCrud.class
+com\workbot\panaderiaweb\resources\JakartaEE8Resource.class
+Controller\Controlador.class
 com\workbot\panaderiaweb\JakartaRestConfiguration.class
