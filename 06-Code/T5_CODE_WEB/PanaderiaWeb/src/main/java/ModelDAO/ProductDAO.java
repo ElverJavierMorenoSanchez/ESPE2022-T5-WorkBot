@@ -107,7 +107,7 @@ public class ProductDAO implements ProductCrud {
     public boolean deleteProduct(Product product) {
         throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
     }
-
+    
     @Override
     public double calculateProfits(int quality, double price) {
         double profit;
