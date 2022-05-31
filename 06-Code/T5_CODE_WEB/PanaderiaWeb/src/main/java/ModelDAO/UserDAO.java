@@ -6,7 +6,6 @@ package ModelDAO;
 
 import ConnectionDB.ConnectionMongoDB;
 import Interfaces.UserCrud;
-import Model.Product;
 import Model.User;
 import com.mongodb.MongoException;
 import com.mongodb.client.MongoCollection;
@@ -19,10 +18,11 @@ import org.bson.Document;
  * @author RobertoCarlos
  */
 public class UserDAO implements UserCrud{
-ConnectionMongoDB connectionMongoDB = new ConnectionMongoDB();
+    ConnectionMongoDB connectionMongoDB = new ConnectionMongoDB();
     MongoDatabase mongoDatabase;
     ResultSet resultSet;
     User user;
+    
     @Override
     public boolean addUser(User user) {
       String query = "{"

@@ -53,7 +53,6 @@
                     <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit.</p>
                 </div>
                 <div class="content">
-
                     <%
                         ProductDAO productDAO = new ProductDAO();
                         List<Product> productList = productDAO.listProduct();
