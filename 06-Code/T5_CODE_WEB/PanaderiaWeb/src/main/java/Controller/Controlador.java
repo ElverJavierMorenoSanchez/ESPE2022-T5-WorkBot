@@ -97,6 +97,8 @@ public class Controlador extends HttpServlet {
                 product.setImgUrl(imgUrl);
 
                 productDAO.addProduct(product);
+                
+                access = adminProduct;
             }
             break;
             case "addUser": {

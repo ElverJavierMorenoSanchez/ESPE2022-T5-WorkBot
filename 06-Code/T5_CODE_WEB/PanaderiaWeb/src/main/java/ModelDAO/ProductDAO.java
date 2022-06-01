@@ -92,7 +92,7 @@ public class ProductDAO implements ProductCrud {
         
         try {
             mongoDatabase = connectionMongoDB.getMongoDatabase();
-            MongoCollection collection = mongoDatabase.getCollection("Productos");
+            MongoCollection collection = mongoDatabase.getCollection("Products");
             collection.insertOne(Document.parse(query));
         } catch (MongoException e) {
             System.out.println("Error" + e);
