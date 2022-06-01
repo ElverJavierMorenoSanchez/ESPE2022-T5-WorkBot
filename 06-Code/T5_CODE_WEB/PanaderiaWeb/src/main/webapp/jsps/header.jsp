@@ -44,7 +44,7 @@
     <div class="navigationUser">
         <div class="userBx">
             <div class="imgBx">
-                <img src="img/perfil/testi1.jpg" alt="">
+                <img src="img/perfil/prf.jpg" alt="">
             </div>
             <p class="username"> <%= AuxUser.getAuxUser().getUser().getName()%> </p>
         </div>

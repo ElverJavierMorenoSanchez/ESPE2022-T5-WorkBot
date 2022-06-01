@@ -15,16 +15,18 @@
     </head>
     <body>
         <div class="login-box">
-            <h1>Login</h1>
-            <div class="textbox">
-                <input type="text" placeholder="Username" name="" value="">
+            <div class="formBx">
+                <form>
+                    <h2>Inicar Sesión</h2>
+                    <input type="text" name="username" placeholder="Correo Electronico o Nombre de Usuario">
+                    <input type="password" name="password" placeholder="Contraseña">
+                    <button class="btn" type="submit" value="validationUser" name="accion">
+                        Inicar Sesión
+                    </button>
+
+                    <p class="login">¿No tienes una Cuenta?<a href="Controlador?accion=newUser"> Ingresa aqui.</a></p>
+                </form>
             </div>
-            <div class="textbox">
-                <input type="password" placeholder="Password" name="" value="">
-            </div>
-            <button type="submit" value="validationUser" name="accion">
-                Crear Cuenta
-            </button>
         </div>
     </body>
 </html>

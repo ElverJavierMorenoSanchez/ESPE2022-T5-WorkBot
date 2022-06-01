@@ -29,7 +29,7 @@ public class Controlador extends HttpServlet {
     String products = "jsps/products.jsp";
     String adminProduct = "jsps/adminProduct.jsp";
     String newUser = "jsps/newUser.jsp";
-    String loginPage = "jsps/footer.jsp";
+    String loginPage = "jsps/loginPage.jsp";
     Product product = new Product();
     User user = new User();
     ProductDAO productDAO = new ProductDAO();
@@ -80,6 +80,7 @@ public class Controlador extends HttpServlet {
             case "loginPage": {
                 access = loginPage;
             }
+            break;
             case "addProduct": {
                 String name = request.getParameter("name");
                 double price = Double.parseDouble(request.getParameter("price"));
@@ -94,7 +95,7 @@ public class Controlador extends HttpServlet {
                 product.setCategory(category);
                 product.setDescription(description);
                 product.setImgUrl(imgUrl);
-                
+
                 productDAO.addProduct(product);
             }
             break;
@@ -122,23 +123,17 @@ public class Controlador extends HttpServlet {
             }
             break;
             case "validationUser": {
-                String email = request.getParameter("email");
                 String username = request.getParameter("username");
                 String password = request.getParameter("password");
 
-                user.setEmail(email);
                 user.setSurname(username);
                 user.setPassword(password);
 
-                if (userDAO.findUser(user)) {
-                    if (username.equals("admin") && password.equals("admin")) {
-                        access = adminProduct;
-                    }else{
-                        AuxUser.getAuxUser().setUser(user);
-                        access = home;
-                    }
-                } else {
-                    access = products;
+                if (username.equals("admin") && password.equals("admin")) {
+                    access = adminProduct;
+                } else if (userDAO.findUser(user)) {
+                    AuxUser.getAuxUser().setUser(user);
+                    access = home;
                 }
             }
             break;

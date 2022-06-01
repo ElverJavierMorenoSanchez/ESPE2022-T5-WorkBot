@@ -33,17 +33,10 @@ public class UserDAO implements UserCrud {
                 + "name: " + "'" + user.getName() + "'" + ","
                 + "surname: " + "'" + user.getSurname() + "'" + ","
                 + "address: " + "'" + user.getAddress() + "'" + ","
-<<<<<<< HEAD
                 + "city: " + "'" + user.getCity()+ "'" + ","
                 + "phone: " + "'" + user.getPhone()+ "'" + ","
                 + "email: " + "'" + user.getEmail()+ "'" + ","
                 + "username: " + "'" + user.getUsername()+ "'" + ","
-=======
-                + "city: " + "'" + user.getCity() + "'" + ","
-                + "phone: " + "'" + user.getPhone() + "'" + ","
-                + "email: " + "'" + user.getEmail() + "'" + ","
-                + "username: " + "'" + user.getUsername() + "'" + ","
->>>>>>> 2a1351b7951348494843d9543f1aa829d5e10eab
                 + "password: " + "'" + user.getPassword() + "'"
                 + "}";
 
@@ -77,7 +70,7 @@ public class UserDAO implements UserCrud {
             MongoCollection collection = mongoDatabase.getCollection("User");
 
             FindIterable<Document> findIterable = collection.find(
-                    and(or(eq("email", user.getEmail()), eq("username", user.getUsername())),
+                    and(or(eq("email", user.getUsername()), eq("username", user.getUsername())),
                             eq("password", user.getPassword())));
 
             if (findIterable.first() != null) {

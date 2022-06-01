@@ -74,8 +74,7 @@ section .container .user .formBx h2
     margin-bottom: 10px;
     color: #555;
 }
-
-section .container .user .formBx button
+section .container .user .formBx input
 {
     width: 100%;
     padding: 10px;
@@ -90,7 +89,7 @@ section .container .user .formBx button
     font-weight: 300;
 }
 section .container .user .formBx button[type="submit"]{
-    max-width: 170px;
+    max-width: 240px;
     background: #ff0157;
     color: #fff;
     cursor: pointer;

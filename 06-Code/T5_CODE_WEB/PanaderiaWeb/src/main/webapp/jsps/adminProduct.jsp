@@ -50,7 +50,10 @@
                             <button type="submit" value="addProduct" name="accion">
                                 Agregar Producto
                             </button>
-                            <!--<input type="submit" value="Agregar" name="Agergar">-->>
+                            
+                            <button type="submit" value="home" name="accion">
+                                Salir
+                            </button>
                         </div>
                     </form>
                 </div>
