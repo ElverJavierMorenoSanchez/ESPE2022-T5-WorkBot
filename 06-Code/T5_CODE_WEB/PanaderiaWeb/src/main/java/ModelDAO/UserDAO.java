@@ -33,11 +33,11 @@ public class UserDAO implements UserCrud {
                 + "name: " + "'" + user.getName() + "'" + ","
                 + "surname: " + "'" + user.getSurname() + "'" + ","
                 + "address: " + "'" + user.getAddress() + "'" + ","
-                + "city: " + "'" + user.getAddress() + "'" + ","
-                + "phone: " + "'" + user.getAddress() + "'" + ","
-                + "email: " + "'" + user.getAddress() + "'" + ","
-                + "username: " + "'" + user.getAddress() + "'" + ","
-                + "password: " + "'" + user.getAddress() + "'"
+                + "city: " + "'" + user.getCity()+ "'" + ","
+                + "phone: " + "'" + user.getPhone()+ "'" + ","
+                + "email: " + "'" + user.getEmail()+ "'" + ","
+                + "username: " + "'" + user.getUsername()+ "'" + ","
+                + "password: " + "'" + user.getPassword() + "'"
                 + "}";
 
         try {

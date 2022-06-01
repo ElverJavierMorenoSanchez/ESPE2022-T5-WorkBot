@@ -24,12 +24,12 @@ import javax.servlet.http.HttpServletResponse;
  */
 @WebServlet(name = "Controlador", urlPatterns = {"/Controlador"})
 public class Controlador extends HttpServlet {
-    
+
     String home = "index.jsp";
     String products = "jsps/products.jsp";
     String adminProduct = "jsps/adminProduct.jsp";
     String newUser = "jsps/newUser.jsp";
-    String login = "jsps/login.jsp";
+    String loginPage = "jsps/footer.jsp";
     Product product = new Product();
     User user = new User();
     ProductDAO productDAO = new ProductDAO();
@@ -56,7 +56,7 @@ public class Controlador extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        
+
         AuxUser.getAuxUser();
         String access = "";
         String accion = request.getParameter("accion");
@@ -69,26 +69,32 @@ public class Controlador extends HttpServlet {
                 access = products;
             }
             break;
-            case "adminProduct":{
+            case "adminProduct": {
                 access = adminProduct;
             }
             break;
-            case "newUser":{
+            case "newUser": {
                 access = newUser;
             }
             break;
-            case "login":{
-                access = login;
+            case "loginPage": {
+                access = loginPage;
             }
             case "addProduct": {
                 String name = request.getParameter("name");
-                double price = Float.parseFloat(request.getParameter("price"));
+                double price = Double.parseDouble(request.getParameter("price"));
                 int quantity = Integer.parseInt(request.getParameter("quantity"));
-                double profit = productDAO.calculateProfits(quantity, price);
+                String category = request.getParameter("category");
+                String description = request.getParameter("description");
+                String imgUrl = request.getParameter("imgUrl");
 
                 product.setName(name);
                 product.setPrice(price);
                 product.setQuantity(quantity);
+                product.setCategory(category);
+                product.setDescription(description);
+                product.setImgUrl(imgUrl);
+                
                 productDAO.addProduct(product);
             }
             break;
@@ -110,24 +116,28 @@ public class Controlador extends HttpServlet {
                 user.setEmail(email);
                 user.setUsername(username);
                 user.setPassword(password);
-                
+
                 AuxUser.getAuxUser().setUser(user);
                 userDAO.addUser(user);
             }
             break;
-            case "validationUser":{
+            case "validationUser": {
                 String email = request.getParameter("email");
                 String username = request.getParameter("username");
                 String password = request.getParameter("password");
-                
+
                 user.setEmail(email);
                 user.setSurname(username);
                 user.setPassword(password);
-                
-                if(userDAO.findUser(user)){
-                    AuxUser.getAuxUser().setUser(user);
-                    access = home;
-                }else{
+
+                if (userDAO.findUser(user)) {
+                    if (username.equals("admin") && password.equals("admin")) {
+                        access = adminProduct;
+                    }else{
+                        AuxUser.getAuxUser().setUser(user);
+                        access = home;
+                    }
+                } else {
                     access = products;
                 }
             }

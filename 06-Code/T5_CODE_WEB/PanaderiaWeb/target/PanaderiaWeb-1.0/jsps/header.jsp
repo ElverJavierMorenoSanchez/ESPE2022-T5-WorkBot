@@ -38,7 +38,7 @@
         AuxUser.getAuxUser();
         if (AuxUser.getAuxUser().getUser() == null) {
     %>
-    <a href="Controlador?accion=newUser" class="singIn">INICAR SESIÓN</a>
+    <a href="Controlador?accion=loginPage" class="singIn">INICAR SESIÓN</a>
     <%} else {%>
     <div class="buttonLogin"></div>
     <div class="navigationUser">

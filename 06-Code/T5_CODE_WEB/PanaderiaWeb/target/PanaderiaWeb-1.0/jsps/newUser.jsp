@@ -34,7 +34,7 @@
                                 Crear Cuenta
                             </button>
                             
-                            <p class="login">¿Ya tienes una Cuenta?<a href="#"> Ingresa aqui.</a></p>
+                            <p class="login">¿Ya tienes una Cuenta?<a href="Controlador?accion=login"> Ingresa aqui.</a></p>
                         </form>
                     </div>
                 </div>

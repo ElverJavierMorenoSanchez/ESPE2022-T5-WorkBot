@@ -36,7 +36,7 @@ body{
 	margin: 8px 0;
 	border-bottom: 1px solid #4caf50;
 }
-.textbox input{
+.textbox button{
 	border: none;
 	outline: none;
 	background: none;

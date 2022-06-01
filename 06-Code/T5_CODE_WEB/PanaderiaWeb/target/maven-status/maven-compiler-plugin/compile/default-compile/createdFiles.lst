@@ -1,10 +1,13 @@
 Model\Product.class
 ConnectionDB\ConnectionMongoDB.class
 ModelDAO\ProductDAO.class
+ModelDAO\ValidationDAO.class
+Interfaces\ValidationCrud.class
 Interfaces\ProductCrud.class
 com\workbot\panaderiaweb\resources\JakartaEE8Resource.class
 Controller\Controlador.class
 Model\User.class
 Interfaces\UserCrud.class
+Model\AuxUser.class
 com\workbot\panaderiaweb\JakartaRestConfiguration.class
 ModelDAO\UserDAO.class

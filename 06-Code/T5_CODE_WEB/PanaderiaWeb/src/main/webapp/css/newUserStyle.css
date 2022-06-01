@@ -75,7 +75,7 @@ section .container .user .formBx h2
     color: #555;
 }
 
-section .container .user .formBx input
+section .container .user .formBx button
 {
     width: 100%;
     padding: 10px;
@@ -89,7 +89,7 @@ section .container .user .formBx input
     letter-spacing: 1px;
     font-weight: 300;
 }
-section .container .user .formBx input[type="submit"]{
+section .container .user .formBx button[type="submit"]{
     max-width: 170px;
     background: #ff0157;
     color: #fff;
@@ -99,7 +99,7 @@ section .container .user .formBx input[type="submit"]{
     letter-spacing: 1px;
     transition: 0.5s;
 }
-section .container .user .formBx input[type="submit"]:hover{
+section .container .user .formBx button[type="submit"]:hover{
     letter-spacing: 3px;
 }
 
