@@ -87,8 +87,8 @@ public class ProductDAO implements ProductCrud {
         
         String query = "{"
                 + "name: " +"'"+ product.getName() + "'"+","
-                + "price: " +"'"+ totalPrice + "'"+","
-                + "quantity: " +"'"+ product.getQuantity() + "'"+","
+                + "price: " + product.getPrice() +","
+                + "quantity: " + product.getQuantity() +","
                 + "category: " +"'"+ product.getCategory() + "'"+","
                 + "description: " +"'"+ product.getDescription() + "'"+","
                 + "imgUrl: " +"'"+ product.getImgUrl() + "'"+","

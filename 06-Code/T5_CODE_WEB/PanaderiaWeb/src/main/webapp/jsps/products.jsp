@@ -38,7 +38,7 @@
                     category = iteratorCategory.next();
                     auxCategory = category;
                     auxCategory=auxCategory.toUpperCase();
-                    firstLetter = auxCategory.substring(0, 1);
+                    //firstLetter = auxCategory.substring(0, 1);
                     auxCategory=auxCategory.substring(1,auxCategory.length());
                     
             %>
@@ -51,9 +51,7 @@
                     Iterator<Product> iteratorProduct = productList.iterator();
                     System.out.println(productList.size());
                     Product product = null;
-                    int i = 0;
-                    while (i != 7 && iteratorProduct.hasNext()) {
-                        i += 1;
+                    while ( iteratorProduct.hasNext()) {
                         product = iteratorProduct.next();
                         if (category.equals(product.getCategory())) {
                             imgUrl = "img/products/";
