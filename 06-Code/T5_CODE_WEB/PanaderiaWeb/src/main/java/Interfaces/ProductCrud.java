@@ -22,5 +22,5 @@ public interface ProductCrud {
     public ArrayList listCategory();
 
     /*Regla de negocio*/
-    public double calculateProfits(int quality, double price);
+    public double calculateTotalPrice(double iva, double price);
 }

@@ -81,9 +81,13 @@ public class ProductDAO implements ProductCrud {
 
     @Override
     public boolean addProduct(Product product) {
+        
+        double iva = 0.12;
+        double totalPrice = calculateTotalPrice(product.getPrice(), iva);
+        
         String query = "{"
                 + "name: " +"'"+ product.getName() + "'"+","
-                + "price: " +"'"+ product.getPrice() + "'"+","
+                + "price: " +"'"+ totalPrice + "'"+","
                 + "quantity: " +"'"+ product.getQuantity() + "'"+","
                 + "category: " +"'"+ product.getCategory() + "'"+","
                 + "description: " +"'"+ product.getDescription() + "'"+","
@@ -112,11 +116,11 @@ public class ProductDAO implements ProductCrud {
     }
     
     @Override
-    public double calculateProfits(int quality, double price) {
-        double profit;
+    public double calculateTotalPrice(double iva, double price) {
+        double totalPrice;
         double IVA = (double) 0.12;
-        profit = (quality * price) * IVA;
+        totalPrice = price * IVA;
 
-        return profit;
+        return totalPrice;
     }
 }
