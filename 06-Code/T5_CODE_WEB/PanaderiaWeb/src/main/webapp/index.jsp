@@ -15,7 +15,7 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>TODO supply a title</title>
+        <title>Dulcemente Pasteles.</title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <script src="js/jquery-3.6.0.min.js"></script>
@@ -48,7 +48,7 @@
                     </div>
                 </div>
             </section>
-            <section class="menu" id="menu">
+            <section class="menuIndex" id="menuIndex">
                 <div class="title">
                     <h2 class="titleText">NUESTROS <span>P</span>RODUCTOS</h2>
                     <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit.</p>
@@ -82,7 +82,7 @@
                     <a href="Controlador?accion=products" class="btn">VER MÁS</a>
                 </div>
             </section>
-            <section class="expert" id="expert">
+            <!--<section class="expert" id="expert">
                 <div class="title">
                     <h2 class="titleText">NUESTRA <span>P</span>ANADERA</h2>
                     <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit.</p>
@@ -145,7 +145,7 @@
                         </div>
                     </div>
                 </div>
-            </section>
+            </section>-->
             <section class="contact" id="contact">
                 <div class="title">
                     <h2 class="titleText"><span>E</span>SCRÍBENOS</h2>

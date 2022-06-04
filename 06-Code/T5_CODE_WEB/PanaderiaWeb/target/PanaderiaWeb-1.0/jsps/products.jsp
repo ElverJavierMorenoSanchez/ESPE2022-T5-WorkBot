@@ -12,7 +12,7 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>TODO supply a title</title>
+        <title>Productos - Dulcemente Pasteles.</title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" href="css/allPageStyle.css">
@@ -38,7 +38,7 @@
                     category = iteratorCategory.next();
                     auxCategory = category;
                     auxCategory=auxCategory.toUpperCase();
-                    //firstLetter = auxCategory.substring(0, 1);
+                    firstLetter = auxCategory.substring(0, 1);
                     auxCategory=auxCategory.substring(1,auxCategory.length());
                     
             %>

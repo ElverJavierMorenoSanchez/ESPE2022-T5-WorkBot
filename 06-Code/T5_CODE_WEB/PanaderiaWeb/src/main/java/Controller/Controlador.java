@@ -97,31 +97,37 @@ public class Controlador extends HttpServlet {
                 product.setImgUrl(imgUrl);
 
                 productDAO.addProduct(product);
-                
+
                 access = adminProduct;
             }
             break;
             case "addUser": {
-                String name = request.getParameter("name");
-                String surname = request.getParameter("surname");
-                String address = request.getParameter("address");
-                String city = request.getParameter("city");
-                String phone = request.getParameter("phone");
-                String email = request.getParameter("email");
                 String username = request.getParameter("username");
                 String password = request.getParameter("password");
 
-                user.setName(name);
-                user.setSurname(surname);
-                user.setAddress(address);
-                user.setCity(city);
-                user.setPhone(phone);
-                user.setEmail(email);
                 user.setUsername(username);
                 user.setPassword(password);
 
-                AuxUser.getAuxUser().setUser(user);
-                userDAO.addUser(user);
+                if (userDAO.findUser(user)) {
+                    access = loginPage;
+                } else {
+                    String name = request.getParameter("name");
+                    String surname = request.getParameter("surname");
+                    String address = request.getParameter("address");
+                    String city = request.getParameter("city");
+                    String phone = request.getParameter("phone");
+                    String email = request.getParameter("email");
+
+                    user.setName(name);
+                    user.setSurname(surname);
+                    user.setAddress(address);
+                    user.setCity(city);
+                    user.setPhone(phone);
+                    user.setEmail(email);
+
+                    AuxUser.getAuxUser().setUser(user);
+                    userDAO.addUser(user);
+                }
             }
             break;
             case "validationUser": {
@@ -136,6 +142,8 @@ public class Controlador extends HttpServlet {
                 } else if (userDAO.findUser(user)) {
                     AuxUser.getAuxUser().setUser(user);
                     access = home;
+                } else {
+                    access = loginPage;
                 }
             }
             break;
