@@ -1,0 +1,3 @@
+ConnectionDB\ConnectionMongoDB.class
+ec\com\workbot\panaderiarestservice\JakartaRestConfiguration.class
+ec\com\workbot\panaderiarestservice\resources\JakartaEE8Resource.class
