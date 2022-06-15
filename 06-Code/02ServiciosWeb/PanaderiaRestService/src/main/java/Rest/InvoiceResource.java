@@ -2,6 +2,8 @@ package Rest;
 
 import ConnectionDB.ConnectionMongoDB;
 import Model.Invoice;
+import Model.User;
+import com.mongodb.MongoException;
 import com.mongodb.client.FindIterable;
 import com.mongodb.client.MongoCollection;
 import com.mongodb.client.MongoCursor;
@@ -30,28 +32,31 @@ public class InvoiceResource {
     @Context
     private UriInfo context;
 
+    ConnectionMongoDB connectionMongoDB = new ConnectionMongoDB();
+    MongoDatabase mongoDatabase;
+    MongoCollection userCollection;
+    MongoCollection cardCollection;
+    ArrayList<User> userList;
+    FindIterable<Document> findIterableCreditCard;
+    MongoCursor<Document> mongoCursorCreditCard;
+    FindIterable<Document> findIterableUser;
+    MongoCursor<Document> mongoCursorUser;
+    User user;
+    Invoice invoice;
     
     public InvoiceResource() {
     }
-    
-    ArrayList<Invoice> invoiceList = new ArrayList<>();
-    ConnectionMongoDB connectionMongoDB = new ConnectionMongoDB();
-    MongoDatabase mongoDatabase;
        
     @GET
-    @Path("listar")
     @Produces(MediaType.APPLICATION_JSON)
-    public ArrayList<Invoice> getJson() {
-        mongoDatabase = connectionMongoDB.getMongoDatabase();
-        MongoCollection collection = mongoDatabase.getCollection("Invoice");
-        FindIterable<Document> findIterable = collection.find(new Document());
-        MongoCursor<Document> mongoCursor = findIterable.iterator();
-        while (mongoCursor.hasNext()){
-            Document docObject = mongoCursor.next();
-            
+    public ArrayList getJson() {
+        try {
+            getCollections();
+            userList = getInvoiceList();
+        } catch (MongoException e){
+            System.out.println("Error" + e);
         }
-        
-        return invoiceList;
+        return userList;
     }
     
     /**
@@ -61,5 +66,13 @@ public class InvoiceResource {
     @PUT
     @Consumes(MediaType.APPLICATION_JSON)
     public void putJson(Invoice content) {
+    }
+
+    private void getCollections() {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    }
+
+    private ArrayList<User> getInvoiceList() {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
     }
 }
