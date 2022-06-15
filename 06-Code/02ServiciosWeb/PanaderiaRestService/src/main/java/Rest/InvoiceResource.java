@@ -4,7 +4,14 @@
  */
 package Rest;
 
+import ConnectionDB.ConnectionMongoDB;
 import Model.Invoice;
+import Model.User;
+import com.mongodb.client.FindIterable;
+import com.mongodb.client.MongoCollection;
+import com.mongodb.client.MongoCursor;
+import com.mongodb.client.MongoDatabase;
+import java.util.ArrayList;
 import javax.ws.rs.core.Context;
 import javax.ws.rs.core.UriInfo;
 import javax.ws.rs.Produces;
@@ -14,6 +21,7 @@ import javax.ws.rs.Path;
 import javax.ws.rs.PUT;
 import javax.enterprise.context.RequestScoped;
 import javax.ws.rs.core.MediaType;
+import org.bson.Document;
 
 /**
  * REST Web Service
@@ -27,21 +35,27 @@ public class InvoiceResource {
     @Context
     private UriInfo context;
 
-    /**
-     * Creates a new instance of InvoiceResource
-     */
+    ConnectionMongoDB connectionMongoDB = new ConnectionMongoDB();
+    MongoDatabase mongoDatabase;
+    MongoCollection userCollection;
+    MongoCollection invoiceCollection;
+    ArrayList<Invoice> invoiceList;
+    FindIterable<Document> findIterableInvoice;
+    MongoCursor<Document> mongoCursorINvoice;
+    FindIterable<Document> findIterableUser;
+    MongoCursor<Document> mongoCursorUser;
+    User user;
+    Invoice invoice;
+    
     public InvoiceResource() {
     }
-
-    /**
-     * Retrieves representation of an instance of Rest.InvoiceResource
-     * @return an instance of Model.Invoice
-     */
+    
+    
+    
     @GET
     @Produces(MediaType.APPLICATION_JSON)
-    public Invoice getJson() {
-        //TODO return proper representation object
-        throw new UnsupportedOperationException();
+    public ArrayList getJson() {
+        
     }
 
     /**
