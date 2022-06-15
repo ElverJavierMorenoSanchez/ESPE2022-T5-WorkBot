@@ -24,59 +24,34 @@ public class Invoice {
     public Invoice() {
     }
 
-    
-    /**
-     * @return the quantity
-     */
     public int getQuantity() {
         return quantity;
     }
 
-    /**
-     * @param quantity the quantity to set
-     */
     public void setQuantity(int quantity) {
         this.quantity = quantity;
     }
 
-    /**
-     * @return the detalle
-     */
     public String getDetalle() {
         return detalle;
     }
 
-    /**
-     * @param detalle the detalle to set
-     */
     public void setDetalle(String detalle) {
         this.detalle = detalle;
     }
 
-    /**
-     * @return the priceUnit
-     */
     public double getPriceUnit() {
         return priceUnit;
     }
 
-    /**
-     * @param priceUnit the priceUnit to set
-     */
     public void setPriceUnit(double priceUnit) {
         this.priceUnit = priceUnit;
     }
 
-    /**
-     * @return the total
-     */
     public double getTotal() {
         return total;
     }
 
-    /**
-     * @param total the total to set
-     */
     public void setTotal(double total) {
         this.total = total;
     }
