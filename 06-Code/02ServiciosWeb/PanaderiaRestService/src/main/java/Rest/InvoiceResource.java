@@ -1,12 +1,7 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/WebServices/GenericResource.java to edit this template
- */
 package Rest;
 
 import ConnectionDB.ConnectionMongoDB;
 import Model.Invoice;
-import Model.User;
 import com.mongodb.client.FindIterable;
 import com.mongodb.client.MongoCollection;
 import com.mongodb.client.MongoCursor;
@@ -35,29 +30,30 @@ public class InvoiceResource {
     @Context
     private UriInfo context;
 
-    ConnectionMongoDB connectionMongoDB = new ConnectionMongoDB();
-    MongoDatabase mongoDatabase;
-    MongoCollection userCollection;
-    MongoCollection invoiceCollection;
-    ArrayList<Invoice> invoiceList;
-    FindIterable<Document> findIterableInvoice;
-    MongoCursor<Document> mongoCursorINvoice;
-    FindIterable<Document> findIterableUser;
-    MongoCursor<Document> mongoCursorUser;
-    User user;
-    Invoice invoice;
     
     public InvoiceResource() {
     }
     
-    
-    
+    ArrayList<Invoice> invoiceList = new ArrayList<>();
+    ConnectionMongoDB connectionMongoDB = new ConnectionMongoDB();
+    MongoDatabase mongoDatabase;
+       
     @GET
+    @Path("listar")
     @Produces(MediaType.APPLICATION_JSON)
-    public ArrayList getJson() {
+    public ArrayList<Invoice> getJson() {
+        mongoDatabase = connectionMongoDB.getMongoDatabase();
+        MongoCollection collection = mongoDatabase.getCollection("Invoice");
+        FindIterable<Document> findIterable = collection.find(new Document());
+        MongoCursor<Document> mongoCursor = findIterable.iterator();
+        while (mongoCursor.hasNext()){
+            Document docObject = mongoCursor.next();
+            
+        }
         
+        return invoiceList;
     }
-
+    
     /**
      * PUT method for updating or creating an instance of InvoiceResource
      * @param content representation for the resource
