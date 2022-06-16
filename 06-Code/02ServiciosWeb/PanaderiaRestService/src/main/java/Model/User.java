@@ -19,7 +19,7 @@ public class User {
     private String password;
     private String fechaNacimiento;
     private CreditCard creditCard;
-
+    
     public User(String name, String surname, String address, String city, String phone, String email, String username, String password, String fechaNacimiento) {
         this.name = name;
         this.surname = surname;
