@@ -72,49 +72,6 @@ public class UsersResource {
         return userList;
     }
     
-    @POST
-    @Produces(MediaType.APPLICATION_JSON)
-    public ArrayList postJson(User content, @PathParam("username") String username) {
-        String query = "{"
-                + "name: " + content.getName()+ ","
-                + "surname: " + "'" + content.getSurname()+ "'" + ","
-                + "address: " + "'" + content.getAddress()+ "'" + ","
-                + "city: " + content.getCity()+ ","
-                + "phone: " + content.getPhone()+ ","
-                + "fechaNacimiento: " + content.getFechaNacimiento()+ ","
-                + "}";
-
-        try {
-            getCollections();
-            .insertOne(Document.parse(query));
-            userCollection.updateOne(eq("username", username), set("idCreditCard", content.getId()));
-            
-            userList = getCardList();
-
-        } catch (MongoException e) {
-            System.out.println("Error" + e);
-        }
-        
-        return userList; 
-    }
-
-    @PUT
-    @Produces(MediaType.APPLICATION_JSON)
-    
-    public ArrayList putJson(@PathParam("id") int id, @PathParam("ownCard") String ownCard) {
-        try {
-            getCollections();
-            
-            cardCollection.updateOne(eq("id", id), set("ownCard", ownCard));
-            userList = getCardList();
-
-        } catch (MongoException e) {
-            System.out.println("Error" + e);
-        }
-        
-        return userList;
-    }
-
     /**
      * PUT method for updating or creating an instance of UsersResource
      *
