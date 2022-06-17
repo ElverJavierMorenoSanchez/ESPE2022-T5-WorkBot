@@ -17,7 +17,7 @@ public class User {
     private String email;
     private String username;
     private String password;
-    private String fechaNacimiento;
+    private String dateBirth;
     private CreditCard creditCard;
     
     public User(String name, String surname, String address, String city, String phone, String email, String username, String password, String fechaNacimiento) {
@@ -29,7 +29,7 @@ public class User {
         this.email = email;
         this.username = username;
         this.password = password;
-        this.fechaNacimiento = fechaNacimiento;
+        this.dateBirth = dateBirth;
     }
 
     
@@ -98,13 +98,13 @@ public class User {
     public void setPassword(String password) {
         this.password = password;
     }
-    
-    public String getFechaNacimiento() {
-        return fechaNacimiento;
+
+    public String getDateBirth() {
+        return dateBirth;
     }
 
-    public void setFechaNacimiento(String fechaNacimiento) {
-        this.fechaNacimiento = fechaNacimiento;
+    public void setDateBirth(String dateBirth) {
+        this.dateBirth = dateBirth;
     }
 
     public CreditCard getCreditCard() {

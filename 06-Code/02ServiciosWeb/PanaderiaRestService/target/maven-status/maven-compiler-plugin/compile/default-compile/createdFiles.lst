@@ -1,0 +1,11 @@
+ec/com/workbot/panaderiarestservice/resources/JakartaEE8Resource.class
+Rest/InvoiceResource.class
+Rest/CreditCardResource.class
+Model/Invoice.class
+Model/Product.class
+Model/User.class
+ConnectionDB/ConnectionMongoDB.class
+Rest/ProductResource.class
+ec/com/workbot/panaderiarestservice/JakartaRestConfiguration.class
+Model/CreditCard.class
+Rest/UsersResource.class

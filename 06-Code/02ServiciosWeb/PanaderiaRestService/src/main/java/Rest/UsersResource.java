@@ -106,7 +106,7 @@ public class UsersResource {
                 user.setUsername(userObject.getString("username"));
                 user.setPassword(userObject.getString("password"));
                 System.out.println(user);
-             // user.setFechaNacimiento(userObject.getString("fechaNacimiento"));
+             // user.setdateBirth(userObject.getString("dateBirth"));
                 userList.add(user);
             }
         } catch (Exception e) {
