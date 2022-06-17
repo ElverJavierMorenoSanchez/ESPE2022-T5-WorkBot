@@ -5,33 +5,22 @@ package Model;
  * @author santi
  */
 public class Invoice {
-    private int id;
-    private int quantity;   
-    private String detalle;
+
+    private int quantity;
+    private String detail;
     private double priceUnit;
     private double total;
     private User user;
 
-    
+    public Invoice(int quantity, String detalle, double priceUnit, double total) {
 
-    public Invoice(int id, int quantity, String detalle, double priceUnit, double total) {
-       
-        this.id = id;
         this.quantity = quantity;
-        this.detalle = detalle;
+        this.detail = detalle;
         this.priceUnit = priceUnit;
         this.total = total;
     }
 
     public Invoice() {
-    }
-    
-        public int getId() {
-        return id;
-    }
-
-    public void setId(int id) {
-        this.id = id;
     }
 
     public int getQuantity() {
@@ -42,12 +31,12 @@ public class Invoice {
         this.quantity = quantity;
     }
 
-    public String getDetalle() {
-        return detalle;
+    public String getDetail() {
+        return detail;
     }
 
-    public void setDetalle(String detalle) {
-        this.detalle = detalle;
+    public void setDetail(String detail) {
+        this.detail = detail;
     }
 
     public double getPriceUnit() {
@@ -65,7 +54,7 @@ public class Invoice {
     public void setTotal(double total) {
         this.total = total;
     }
-    
+
     public User getUser() {
         return user;
     }
@@ -73,5 +62,5 @@ public class Invoice {
     public void setUser(User user) {
         this.user = user;
     }
-    
+
 }
