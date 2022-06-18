@@ -2,6 +2,7 @@
 package Rest;
 
 import ConnectionDB.ConnectionMongoDB;
+import Model.CreditCard;
 import Model.Product;
 import com.mongodb.MongoException;
 import com.mongodb.client.FindIterable;
@@ -9,6 +10,7 @@ import com.mongodb.client.MongoCollection;
 import com.mongodb.client.MongoCursor;
 import com.mongodb.client.MongoDatabase;
 import static com.mongodb.client.model.Filters.eq;
+import static com.mongodb.client.model.Updates.set;
 import java.util.ArrayList;
 import javax.ws.rs.core.Context;
 import javax.ws.rs.core.UriInfo;
@@ -40,7 +42,7 @@ public class ProductResource {
     MongoCursor<Document> mongoCursorCreditCard;
     FindIterable<Document> findIterableUser;
     MongoCursor<Document> mongoCursorUser;
-  //  User user;
+    Product product;
    // CreditCard creditCard;
    
     public ProductResource() {
@@ -94,12 +96,11 @@ public class ProductResource {
             System.out.println("Error" + e);
         }
         return productList;
-
-      
      }
      
+     
      @GET
-    @Path("/getCard/{id}")
+    @Path("/getProduct/{id}")
     @Produces(MediaType.APPLICATION_JSON)
     public ArrayList<Product> getJson(@PathParam("id") int id) {
         try {
@@ -126,6 +127,33 @@ public class ProductResource {
      * PUT method for updating or creating an instance of ProductResource
      * @param content representation for the resource
      */
+    
+     @POST
+    @Path("addProduct/{name}")
+    @Produces(MediaType.APPLICATION_JSON)
+    @Consumes(MediaType.APPLICATION_JSON)
+    public ArrayList postJson(CreditCard content, @PathParam("username") String username) {
+        String query = "{"
+                + "numberCard: " + content.getNumberCard() + ","
+                + "dateExpiry: " + "'" + content.getDateExpiry() + "'" + ","
+                + "ownCard: " + "'" + content.getOwnCard() + "'" + ","
+                + "securityCode: " + content.getSecurityCode() + ","
+                + "id: " + content.getId() + ","
+                + "}";
+
+        try {
+            getCollections();
+            cardCollection.insertOne(Document.parse(query));
+            userCollection.updateOne(eq("username", username), set("idCreditCard", content.getId()));
+            
+
+        } catch (MongoException e) {
+            System.out.println("Error" + e);
+        }
+        
+        return productList;
+    }
+    
     @PUT
     @Consumes(MediaType.APPLICATION_JSON)
     public void putJson(Product content) {

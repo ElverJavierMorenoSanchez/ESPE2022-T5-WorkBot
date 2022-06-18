@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 Model\Product.class
 ConnectionDB\ConnectionMongoDB.class
 Model\CreditCard.class
@@ -10,16 +9,3 @@ Model\User.class
 Rest\UsersResource.class
 Rest\InvoiceResource.class
 Rest\ProductResource.class
-=======
-ec/com/workbot/panaderiarestservice/resources/JakartaEE8Resource.class
-Rest/InvoiceResource.class
-Rest/CreditCardResource.class
-Model/Invoice.class
-Model/Product.class
-Model/User.class
-ConnectionDB/ConnectionMongoDB.class
-Rest/ProductResource.class
-ec/com/workbot/panaderiarestservice/JakartaRestConfiguration.class
-Model/CreditCard.class
-Rest/UsersResource.class
->>>>>>> e53ebe471cca4f93e434f91fb0061072c6125c72

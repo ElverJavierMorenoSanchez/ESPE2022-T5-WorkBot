@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 D:\Games\ESPE2022-T5-WorkBot\06-Code\02ServiciosWeb\PanaderiaRestService\src\main\java\ec\com\workbot\panaderiarestservice\resources\JakartaEE8Resource.java
 D:\Games\ESPE2022-T5-WorkBot\06-Code\02ServiciosWeb\PanaderiaRestService\src\main\java\Model\Product.java
 D:\Games\ESPE2022-T5-WorkBot\06-Code\02ServiciosWeb\PanaderiaRestService\src\main\java\Model\CreditCard.java
@@ -10,16 +9,3 @@ D:\Games\ESPE2022-T5-WorkBot\06-Code\02ServiciosWeb\PanaderiaRestService\src\mai
 D:\Games\ESPE2022-T5-WorkBot\06-Code\02ServiciosWeb\PanaderiaRestService\src\main\java\Rest\ProductResource.java
 D:\Games\ESPE2022-T5-WorkBot\06-Code\02ServiciosWeb\PanaderiaRestService\src\main\java\ConnectionDB\ConnectionMongoDB.java
 D:\Games\ESPE2022-T5-WorkBot\06-Code\02ServiciosWeb\PanaderiaRestService\src\main\java\ec\com\workbot\panaderiarestservice\JakartaRestConfiguration.java
-=======
-/Users/edisonnaranjodemera/Dropbox/Mi Mac (MacBook Pro de Edison)/Desktop/ESPE2022-T5-WorkBot/06-Code/02ServiciosWeb/PanaderiaRestService/src/main/java/Model/User.java
-/Users/edisonnaranjodemera/Dropbox/Mi Mac (MacBook Pro de Edison)/Desktop/ESPE2022-T5-WorkBot/06-Code/02ServiciosWeb/PanaderiaRestService/src/main/java/Rest/CreditCardResource.java
-/Users/edisonnaranjodemera/Dropbox/Mi Mac (MacBook Pro de Edison)/Desktop/ESPE2022-T5-WorkBot/06-Code/02ServiciosWeb/PanaderiaRestService/src/main/java/Rest/UsersResource.java
-/Users/edisonnaranjodemera/Dropbox/Mi Mac (MacBook Pro de Edison)/Desktop/ESPE2022-T5-WorkBot/06-Code/02ServiciosWeb/PanaderiaRestService/src/main/java/Model/Product.java
-/Users/edisonnaranjodemera/Dropbox/Mi Mac (MacBook Pro de Edison)/Desktop/ESPE2022-T5-WorkBot/06-Code/02ServiciosWeb/PanaderiaRestService/src/main/java/Rest/ProductResource.java
-/Users/edisonnaranjodemera/Dropbox/Mi Mac (MacBook Pro de Edison)/Desktop/ESPE2022-T5-WorkBot/06-Code/02ServiciosWeb/PanaderiaRestService/src/main/java/Rest/InvoiceResource.java
-/Users/edisonnaranjodemera/Dropbox/Mi Mac (MacBook Pro de Edison)/Desktop/ESPE2022-T5-WorkBot/06-Code/02ServiciosWeb/PanaderiaRestService/src/main/java/ec/com/workbot/panaderiarestservice/resources/JakartaEE8Resource.java
-/Users/edisonnaranjodemera/Dropbox/Mi Mac (MacBook Pro de Edison)/Desktop/ESPE2022-T5-WorkBot/06-Code/02ServiciosWeb/PanaderiaRestService/src/main/java/Model/Invoice.java
-/Users/edisonnaranjodemera/Dropbox/Mi Mac (MacBook Pro de Edison)/Desktop/ESPE2022-T5-WorkBot/06-Code/02ServiciosWeb/PanaderiaRestService/src/main/java/ConnectionDB/ConnectionMongoDB.java
-/Users/edisonnaranjodemera/Dropbox/Mi Mac (MacBook Pro de Edison)/Desktop/ESPE2022-T5-WorkBot/06-Code/02ServiciosWeb/PanaderiaRestService/src/main/java/Model/CreditCard.java
-/Users/edisonnaranjodemera/Dropbox/Mi Mac (MacBook Pro de Edison)/Desktop/ESPE2022-T5-WorkBot/06-Code/02ServiciosWeb/PanaderiaRestService/src/main/java/ec/com/workbot/panaderiarestservice/JakartaRestConfiguration.java
->>>>>>> e53ebe471cca4f93e434f91fb0061072c6125c72
