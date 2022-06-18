@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 C:\Users\javie\Desktop\ESPE2022-T5-WorkBot\06-Code\02ServiciosWeb\PanaderiaRestService\src\main\java\ec\com\workbot\panaderiarestservice\resources\JakartaEE8Resource.java
 C:\Users\javie\Desktop\ESPE2022-T5-WorkBot\06-Code\02ServiciosWeb\PanaderiaRestService\src\main\java\Rest\UsersResource.java
 C:\Users\javie\Desktop\ESPE2022-T5-WorkBot\06-Code\02ServiciosWeb\PanaderiaRestService\src\main\java\ec\com\workbot\panaderiarestservice\JakartaRestConfiguration.java
@@ -9,3 +10,16 @@ C:\Users\javie\Desktop\ESPE2022-T5-WorkBot\06-Code\02ServiciosWeb\PanaderiaRestS
 C:\Users\javie\Desktop\ESPE2022-T5-WorkBot\06-Code\02ServiciosWeb\PanaderiaRestService\src\main\java\Rest\InvoiceResource.java
 C:\Users\javie\Desktop\ESPE2022-T5-WorkBot\06-Code\02ServiciosWeb\PanaderiaRestService\src\main\java\Model\Product.java
 C:\Users\javie\Desktop\ESPE2022-T5-WorkBot\06-Code\02ServiciosWeb\PanaderiaRestService\src\main\java\Model\CreditCard.java
+=======
+D:\Games\ESPE2022-T5-WorkBot\06-Code\02ServiciosWeb\PanaderiaRestService\src\main\java\ec\com\workbot\panaderiarestservice\resources\JakartaEE8Resource.java
+D:\Games\ESPE2022-T5-WorkBot\06-Code\02ServiciosWeb\PanaderiaRestService\src\main\java\Model\Product.java
+D:\Games\ESPE2022-T5-WorkBot\06-Code\02ServiciosWeb\PanaderiaRestService\src\main\java\Model\CreditCard.java
+D:\Games\ESPE2022-T5-WorkBot\06-Code\02ServiciosWeb\PanaderiaRestService\src\main\java\Rest\CreditCardResource.java
+D:\Games\ESPE2022-T5-WorkBot\06-Code\02ServiciosWeb\PanaderiaRestService\src\main\java\Rest\UsersResource.java
+D:\Games\ESPE2022-T5-WorkBot\06-Code\02ServiciosWeb\PanaderiaRestService\src\main\java\Model\Invoice.java
+D:\Games\ESPE2022-T5-WorkBot\06-Code\02ServiciosWeb\PanaderiaRestService\src\main\java\Model\User.java
+D:\Games\ESPE2022-T5-WorkBot\06-Code\02ServiciosWeb\PanaderiaRestService\src\main\java\Rest\InvoiceResource.java
+D:\Games\ESPE2022-T5-WorkBot\06-Code\02ServiciosWeb\PanaderiaRestService\src\main\java\Rest\ProductResource.java
+D:\Games\ESPE2022-T5-WorkBot\06-Code\02ServiciosWeb\PanaderiaRestService\src\main\java\ConnectionDB\ConnectionMongoDB.java
+D:\Games\ESPE2022-T5-WorkBot\06-Code\02ServiciosWeb\PanaderiaRestService\src\main\java\ec\com\workbot\panaderiarestservice\JakartaRestConfiguration.java
+>>>>>>> eeddac3e68ac048396b517428c9c51175edd4b0e
