@@ -170,11 +170,11 @@ public class ProductResource {
     
     /* REGLA DE NEGOCIO */
     
-     @GET
-    @Path("bussinesRuleProduct/{category}")
+    @GET
+    @Path("caculateCategoryInventary/{category}")
     @Produces(MediaType.APPLICATION_JSON)
-    public ArrayList getJson1(@PathParam("category") String category) throws SQLException {
-        productList = new ArrayList<>();
+    public Document getJson1(@PathParam("category") String category){
+        Document httpCode = new Document("http-code", 504);
         product = new Product();
         int productTotal = 0;
         try {
@@ -182,17 +182,26 @@ public class ProductResource {
 
             findIterableProduct = productCollection.find(eq("category", category));
             mongoCursorProduct = findIterableProduct.iterator();
-            
             while (mongoCursorProduct.hasNext()) {
-              
+                Document productObject = mongoCursorProduct.next();
+                
+                int c = productObject.getInteger("quantity");
+                productTotal = productTotal+c;
             }
-        } catch (MongoException e) {
+            
+            String query = "{"
+                        + "Categoria: '" + category+ "',"
+                        + "TotalProductosDisponibles: " + productTotal
+                        + "}";
+            
+            httpCode = new Document(Document.parse(query));
+        } catch (Exception e) {
             System.out.println("Error" + e);
+            httpCode = new Document("http-code", 504);
         }
-        return productList;
+        return httpCode;
     }
-    
-    
+   
     
     /* FUNCIONES UTILES */
     

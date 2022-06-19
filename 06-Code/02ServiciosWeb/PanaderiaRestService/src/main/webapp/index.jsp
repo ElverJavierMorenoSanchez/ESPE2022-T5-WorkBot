@@ -42,7 +42,7 @@
                             <tbody>
                                 <tr>
                                     <th>DESCRIPCIÓN</th>
-                                    <td>Apartir de  un id se obtiene la información de la tarjeta a la que le corresponda el id.</td>
+                                    <td>Apartir de  un id se obtiene la información del Usuario a la que le corresponda el id.</td>
                                 </tr>
                                 <tr>
                                     <th>MÉTODO</th>
@@ -50,11 +50,11 @@
                                 </tr>
                                 <tr>
                                     <th>URI</th>
-                                    <td>workbot.jelastic.saveincloud.net/resources/CreditCard<b>/getCard/{idCard}</b></td>
+                                    <td>workbot.jelastic.saveincloud.net/resources/CreditCard<b>/getusername/{username}</b></td>
                                 </tr>
                                 <tr>
                                     <th>PARÁMETROS</th>
-                                    <td><b>idCard:</b> id de la tarjeta de crédito.</td>
+                                    <td><b>idCard:</b> id de la tarjeta del Usuario.</td>
                                 </tr>
                                 <tr>
                                     <th>FORMATO</th>
@@ -84,7 +84,7 @@
                             <tbody>
                                 <tr>
                                     <th>DESCRIPCIÓN</th>
-                                    <td>Se añade una nueva tarjeta a un usuario indicando su nombre de usuario. Los usuarios solo pueden tener una tarjeta registrada, por lo que, si se se le inserta una nueva tarjeta a un usuario que ya tiene una simplemente se actualizará la información.</td>
+                                    <td>Se añade un nuevoun usuario indicando su username.</td>
                                 </tr>
                                 <tr>
                                     <th>MÉTODO</th>
@@ -96,7 +96,7 @@
                                 </tr>
                                 <tr>
                                     <th>PARÁMETROS</th>
-                                    <td> <b>username:</b> Nombre de usuario de la persona a la que se le va a registrar la tarjeta. <br>
+                                    <td> <b>username:</b> Nombre de usuario de la persona que registra el Usuario. <br>
                                         <b>JSON:</b> <br>
                                         { <br>
                                         "dateExpiry": "MM/yy", <br>
@@ -242,7 +242,8 @@
                     <a href="resources/Users" class="btn" target="_blank">PROBAR URI</a>
                 </div>
 
-                <!-- PRODUCTOS --> 
+              
+                  <!-- PRODUCTOS --> 
 
                 <div class="tableContainer">
                     <div class="title">
@@ -254,7 +255,7 @@
                             <tbody>
                                 <tr>
                                     <th>DESCRIPCIÓN</th>
-                                    <td>Apartir de  un id se obtiene la información de la tarjeta a la que le corresponda el id.</td>
+                                    <td>Se ingresa un nuevo Producto .</td>
                                 </tr>
                                 <tr>
                                     <th>MÉTODO</th>
@@ -262,11 +263,11 @@
                                 </tr>
                                 <tr>
                                     <th>URI</th>
-                                    <td>workbot.jelastic.saveincloud.net/resources/CreditCard<b>/getCard/{idCard}</b></td>
+                                    <td>workbot.jelastic.saveincloud.net/resources/CreditCard<b>/Product/add</b></td>
                                 </tr>
                                 <tr>
                                     <th>PARÁMETROS</th>
-                                    <td><b>idCard:</b> id de la tarjeta de crédito.</td>
+                                    <td><b></b></td>
                                 </tr>
                                 <tr>
                                     <th>FORMATO</th>
@@ -277,14 +278,13 @@
                                     <td>
                                         <p>
                                             { <br>
-                                            "creditCard": { <br>
-                                            "dateExpiry": "MM/yy", <br>
-                                            "id": 0,<br>
-                                            "numberCard": 1234567891234561,<br>
-                                            "ownCard": "Nombre Apellido",<br>
-                                            "securityCode": 000<br>
-                                            },<br>
-                                            "username": "username"<br>
+                                            "PRODUCT":{"category":"galletas",<br>
+                                            "description":"Bandeja de galletas de punto.",<br>
+                                            "id":1,
+                                            "imgUrl":"bandeja-galleta-de-puntos.jpg",<br>
+                                            "name":"Bandeja De Galletas chocolate",<br>
+                                            "price":0.4,<br>
+                                            "quantity":50 <br>
                                             }
                                         </p>
                                     </td>
@@ -296,26 +296,23 @@
                             <tbody>
                                 <tr>
                                     <th>DESCRIPCIÓN</th>
-                                    <td>Se añade una nueva tarjeta a un usuario indicando su nombre de usuario. Los usuarios solo pueden tener una tarjeta registrada, por lo que, si se se le inserta una nueva tarjeta a un usuario que ya tiene una simplemente se actualizará la información.</td>
+                                    <td>Se borra el Producto seleccionado .</td>
                                 </tr>
                                 <tr>
                                     <th>MÉTODO</th>
-                                    <td>POST</td>
+                                    <td>DELETE</td>
                                 </tr>
                                 <tr>
                                     <th>URI</th>
-                                    <td>workbot.jelastic.saveincloud.net/resources/CreditCard<b>/addCard/{username}</b></td>
+                                    <td>workbot.jelastic.saveincloud.net/resources/CreditCard<b>Product/delete</b></td>
                                 </tr>
                                 <tr>
                                     <th>PARÁMETROS</th>
-                                    <td> <b>username:</b> Nombre de usuario de la persona a la que se le va a registrar la tarjeta. <br>
+                                    <td> <b>id:</b> Id del usuario que se va a borrar<br>
                                         <b>JSON:</b> <br>
                                         { <br>
-                                        "dateExpiry": "MM/yy", <br>
-                                        "id": 0,<br>
-                                        "numberCard": 1234567891234561,<br>
-                                        "ownCard": "Nombre Apellido",<br>
-                                        "securityCode": 000<br>
+                                        {"http-code":201}
+                                        <br>
                                         }
                                     </td>
                                 </tr>
@@ -327,9 +324,7 @@
                                     <th>DEVUELVE</th>
                                     <td>
                                         <p>
-                                            { 
-                                            "http-code": 201 
-                                            }
+                                            
                                         </p>
                                     </td>
                                 </tr>
@@ -340,7 +335,7 @@
                             <tbody>
                                 <tr>
                                     <th>DESCRIPCIÓN</th>
-                                    <td>Se actualiza la información de una tajeta indicando su id.</td>
+                                    <td>Se actualiza la información de un Producto mediante id.</td>
                                 </tr>
                                 <tr>
                                     <th>MÉTODO</th>
@@ -348,19 +343,21 @@
                                 </tr>
                                 <tr>
                                     <th>URI</th>
-                                    <td>workbot.jelastic.saveincloud.net/resources/CreditCard<b>/updateCard/{idCard}</b></td>
+                                    <td>workbot.jelastic.saveincloud.net/resources/CreditCard<b> Product/update/{id}</b></td>
                                 </tr>
                                 <tr>
                                     <th>PARÁMETROS</th>
-                                    <td> <b>idCard:</b> id de la tarjeta de crédito.<br>
+                                    <td> <b>id:</b> id del Producto.<br>
                                         <b>JSON:</b> <br>
-                                        { <br>
-                                        "dateExpiry": "MM/yy", <br>
-                                        "id": 0,<br>
-                                        "numberCard": 1234567891234561,<br>
-                                        "ownCard": "Nombre Apellido",<br>
-                                        "securityCode": 000<br>
-                                        }
+                                         { <br>
+                                            "Product":{"category":"panes",<br>
+                                            "description":"Bandeja de panes de punto.",<br>
+                                            "id":1,
+                                            "imgUrl":"bandeja-galleta-de-puntos.jpg",<br>
+                                            "name":"Bandeja De panes chocolate",<br>
+                                            "price":0.4,<br>
+                                            "quantity":50 <br>
+                                            }
                                     </td>
                                 </tr>
                                 <tr>
@@ -372,7 +369,7 @@
                                     <td>
                                         <p>
                                             { 
-                                            "http-code": 201 
+                                          {"http-code":201}
                                             }
                                         </p>
                                     </td>
@@ -384,19 +381,19 @@
                             <tbody>
                                 <tr>
                                     <th>DESCRIPCIÓN</th>
-                                    <td>Se elimina una tarjeta indicando su id.</td>
+                                    <td>Se busca producto por categoria.</td>
                                 </tr>
                                 <tr>
                                     <th>MÉTODO</th>
-                                    <td>DELETE</td>
+                                    <td>GET</td>
                                 </tr>
                                 <tr>
                                     <th>URI</th>
-                                    <td>workbot.jelastic.saveincloud.net/resources/CreditCard<b>/deleteCard/{idCard}</b></td>
+                                    <td>workbot.jelastic.saveincloud.net/resources/CreditCard<b>/deleteProduct{id}</b></td>
                                 </tr>
                                 <tr>
                                     <th>PARÁMETROS</th>
-                                    <td> <b>idCard:</b> id de la tarjeta de crédito.<br>
+                                    <td> <b>category:</b> Categoria del Producto.<br>
                                     </td>
                                 </tr>
                                 <tr>
@@ -408,7 +405,13 @@
                                     <td>
                                         <p>
                                             { 
-                                            "http-code": 201 
+                                           [{"category":"donas",<br>
+                                             "description":"Bandeja de Donas.",<br>
+                                             "id":2,
+                                             "imgUrl":"bandeja-galleta-de-puntos.jpg",<br>
+                                             "name":"donas de azucar",<br>
+                                             "price":0.4,<br>
+                                             "quantity":50}<br>
                                             }
                                         </p>
                                     </td>
@@ -420,7 +423,7 @@
                             <tbody>
                                 <tr>
                                     <th>DESCRIPCIÓN</th>
-                                    <td>Toda tarjeta de credito tiene una fecha de caducidad, por lo que, apartir de su id podemos calcular cuanto tiempo falta para que llegue esa fecha</td>
+                                    <td>Inventario de Productos</td>
                                 </tr>
                                 <tr>
                                     <th>MÉTODO</th>
@@ -432,7 +435,7 @@
                                 </tr>
                                 <tr>
                                     <th>PARÁMETROS</th>
-                                    <td><b>idCard:</b> id de la tarjeta de crédito.</td>
+                                    <td><b>category:</b> categoria de producto.</td>
                                 </tr>
                                 <tr>
                                     <th>FORMATO</th>
@@ -443,6 +446,8 @@
                                     <td>
                                         <p>
                                             { <br>
+                                            {"Categoria":"donas",<br>
+                                            "TotalProductosDisponibles":50}<br>
 
                                             }
                                         </p>
@@ -454,6 +459,8 @@
                     <a href="resources/Product" class="btn" target="_blank">PROBAR URI</a>
                 </div>
 
+                
+                
                 <!-- TARJETAS DE CREDITO -->
 
                 <div class="tableContainer">
