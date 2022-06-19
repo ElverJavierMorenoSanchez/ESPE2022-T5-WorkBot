@@ -171,7 +171,7 @@ public class ProductResource {
     /* REGLA DE NEGOCIO */
     
     @GET
-    @Path("caculateCategoryInventary/{category}")
+    @Path("calculateCategoryInventary/{category}")
     @Produces(MediaType.APPLICATION_JSON)
     public Document getJson1(@PathParam("category") String category){
         Document httpCode = new Document("http-code", 504);
