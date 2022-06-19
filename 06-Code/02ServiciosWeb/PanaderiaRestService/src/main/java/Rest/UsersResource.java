@@ -5,7 +5,6 @@
 package Rest;
 
 import ConnectionDB.ConnectionMongoDB;
-import Model.CreditCard;
 import Model.User;
 import com.mongodb.MongoException;
 import com.mongodb.client.FindIterable;
@@ -72,6 +71,60 @@ public class UsersResource {
         return userList;
     }
     
+    @POST
+    @Produces(MediaType.APPLICATION_JSON)
+    @Consumes(MediaType.APPLICATION_JSON)
+    public ArrayList postJson(User content, @PathParam("username") String username, Document Document) {
+        String query = "{"
+                + "name: " + content.getName()+ ","
+                + "surname: " + "'" + content.getSurname()+ "'" + ","
+                + "address: " + "'" + content.getAddress()+ "'" + ","
+                + "city: " + content.getCity()+ ","
+                + "phone: " + content.getPhone()+ ","
+                + "dateBirth: " + content.getDateBirth()+ ","
+                + "}";
+
+        try {
+            getCollections();
+            Document = new Document();
+            userList.insert.One(Document.parse(query));
+            userCollection.updateOne(eq("username", username));
+            
+            userList = getUserlist();
+
+        } catch (MongoException e) {
+            System.out.println("Error" + e);
+        }
+        
+        return userList; 
+    }
+
+    @GET
+    @Produces(MediaType.APPLICATION_JSON)
+    
+        try { 
+            userList = getUserlist();
+
+        } catch (MongoException e) {
+            System.out.println("Error" + e);
+        }
+        return userList;
+    }
+
+    @POST
+    @Produces(MediaType.APPLICATION_JSON)
+    @Consumes(MediaType.APPLICATION_JSON)
+    public ArrayList postJson(User content, @PathParam("username") String username, Document Document) {
+        String query = "{"
+                + "name: " + content.getName()+ ","
+                + "surname: " + "'" + content.getSurname()+ "'" + ","
+                + "address: " + "'" + content.getAddress()+ "'" + ","
+                + "city: " + content.getCity()+ ","
+                + "phone: " + content.getPhone()+ ","
+                + "dateBirth: " + content.getDateBirth()+ ","
+                + "}";
+        
+    }    
     /**
      * PUT method for updating or creating an instance of UsersResource
      *
