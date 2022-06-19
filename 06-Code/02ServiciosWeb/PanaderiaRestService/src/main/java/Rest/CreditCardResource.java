@@ -60,7 +60,7 @@ public class CreditCardResource {
     }
 
     @GET
-    @Path("/getCard/{id}")
+    @Path("get/{id}")
     @Produces(MediaType.APPLICATION_JSON)
     public User getJson(@PathParam("id") int id) {
         user = new User();
@@ -80,7 +80,7 @@ public class CreditCardResource {
     }
 
     @POST
-    @Path("addCard/{username}")
+    @Path("add/{username}")
     @Produces(MediaType.APPLICATION_JSON)
     @Consumes(MediaType.APPLICATION_JSON)
     public Document postJson(CreditCard content, @PathParam("username") String username) {
@@ -114,7 +114,7 @@ public class CreditCardResource {
     }
 
     @PUT
-    @Path("updateCard/{id}")
+    @Path("update/{id}")
     @Produces(MediaType.APPLICATION_JSON)
     @Consumes(MediaType.APPLICATION_JSON)
     public Document putJson(CreditCard content, @PathParam("id") int id) {
@@ -149,7 +149,7 @@ public class CreditCardResource {
     }
 
     @DELETE
-    @Path("deleteCard/{id}")
+    @Path("delete/{id}")
     @Produces(MediaType.APPLICATION_JSON)
     @Consumes(MediaType.APPLICATION_JSON)
     public Document deleteJson(@PathParam("id") int id) {
