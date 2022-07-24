@@ -1,4 +1,5 @@
 import React from "react";
+import TextField from "@mui/material/TextField/TextField";
 
 function Contact() {
   return (
@@ -11,12 +12,20 @@ function Contact() {
       </div>
       <div className="contactForm">
         <h3>Enviar Mensaje</h3>
-        <div className="inputBox">
-          <input type="text" placeholder="Name" />
-        </div>
-        <div className="inputBox">
-          <input type="text" placeholder="Email" />
-        </div>
+
+        <TextField
+          label="Name"
+          color="secondary"
+          fullWidth
+          style={{ margin: "10px 0" }}
+        />
+        <TextField
+          label="Email"
+          color="secondary"
+          fullWidth
+          style={{ margin: "10px 0" }}
+        />
+
         <div className="inputBox">
           <textarea name="Name"></textarea>
         </div>
