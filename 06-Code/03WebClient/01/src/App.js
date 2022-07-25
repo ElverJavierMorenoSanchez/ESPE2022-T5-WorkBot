@@ -5,6 +5,7 @@ import TopBar from "./components/ComponentsTopBar/TopBar";
 import Footer from "./components/ComponentsFooter/Footer";
 import HomePage from "./views/HomePage";
 import { Routes, Route } from "react-router-dom";
+import Login from "./views/Login.";
 
 function App() {
   return (
@@ -12,7 +13,7 @@ function App() {
       <TopBar />
 
       <Routes>
-        <Route path="/" element={<HomePage />} />
+        <Route path="/" element={<Login />} />
         <Route path="/products" element={<ProductPage />} />
       </Routes>
 
