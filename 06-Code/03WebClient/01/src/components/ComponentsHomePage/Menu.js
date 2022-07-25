@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from "react";
 import ButtonOption from "../ComponentButton/ButtonOption";
 import MenuProduct from "./MenuProduct";
-import product from "../../img/products/Donas.jpg";
 import { GetProducts } from "../../util/axios";
 
 function Menu() {
@@ -10,9 +9,7 @@ function Menu() {
   useEffect(() => {
     async function getProducts() {
       const product = await GetProducts();
-      setProducts(product.data);
-
-      console.log(products);
+      setProducts(product);
     }
 
     getProducts();
@@ -26,7 +23,19 @@ function Menu() {
         </h2>
         <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit.</p>
       </div>
-      <MenuProduct src={product} title="Donas" />
+      <div className="content">
+        {products.map((product, index) => {
+          if (index < 7)
+            return (
+              <MenuProduct
+                key={index}
+                src={product.imgUrl}
+                title={product.name}
+              />
+            );
+        })}
+      </div>
+
       <div className="title">
         <ButtonOption href="/products" className="btn" text="VER MÁS" />
       </div>

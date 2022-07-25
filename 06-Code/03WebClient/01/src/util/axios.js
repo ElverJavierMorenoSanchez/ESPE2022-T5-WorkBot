@@ -9,8 +9,6 @@ export async function GetProducts() {
           "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYyZGI0M2EyOWExZGI3ZDJhOGU5M2E3MiIsImlhdCI6MTY1ODUzNzMzNCwiZXhwIjoxNjU4NjIzNzM0fQ.44UYTg6clnTQWnhNQ5htZ1At89v1ognvRXBTmQ9HeHI",
       },
     });
-    console.log(response);
-
     /*
     const response = await axios.post(baseUrl, {
       data: {

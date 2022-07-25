@@ -1,9 +1,20 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import Product from "../components/ComponentsProductPage/Product";
-import product from "../img/products/Donas.jpg";
+import { GetProducts } from "../util/axios";
 import "../styles/ProductPage.css";
 
 function ProductPage() {
+  const [products, setProducts] = useState([]);
+
+  useEffect(() => {
+    async function getProducts() {
+      const product = await GetProducts();
+      setProducts(product);
+    }
+
+    getProducts();
+  }, []);
+
   return (
     <>
       <div id="header"></div>
@@ -19,60 +30,9 @@ function ProductPage() {
           </h2>
         </div>
         <div class="content">
-          <Product
-            src={product}
-            name="Donas"
-            price="0.35"
-            description="Ricas Donas Redondas"
-          />
-          <Product
-            src={product}
-            name="Donas"
-            price="0.35"
-            description="Ricas Donas Redondas"
-          />
-          <Product
-            src={product}
-            name="Donas"
-            price="0.35"
-            description="Ricas Donas Redondas"
-          />
-          <Product
-            src={product}
-            name="Donas"
-            price="0.35"
-            description="Ricas Donas Redondas"
-          />
-          <Product
-            src={product}
-            name="Donas"
-            price="0.35"
-            description="Ricas Donas Redondas"
-          />
-          <Product
-            src={product}
-            name="Donas"
-            price="0.35"
-            description="Ricas Donas Redondas"
-          />
-          <Product
-            src={product}
-            name="Donas"
-            price="0.35"
-            description="Ricas Donas Redondas"
-          />
-          <Product
-            src={product}
-            name="Donas"
-            price="0.35"
-            description="Ricas Donas Redondas"
-          />
-          <Product
-            src={product}
-            name="Donas"
-            price="0.35"
-            description="Ricas Donas Redondas"
-          />
+          {products.map((product) => (
+            <Product product={product} />
+          ))}
         </div>
       </section>
     </>
