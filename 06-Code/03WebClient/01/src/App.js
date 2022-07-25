@@ -7,12 +7,15 @@ import Footer from "./components/ComponentsFooter/Footer";
 import HomePage from "./views/HomePage";
 import { Routes, Route } from "react-router-dom";
 import Login from "./views/Login.";
+import AddProductsPage from "./views/AddProductsPage";
 
 function App() {
   return (
     <div className="App">
       <Routes>
+        <Route path="/" element={<Login />} />
         <Route path="/login" element={<Login />} />
+
         <Route
           path="/products"
           element={
@@ -33,6 +36,7 @@ function App() {
             </>
           }
         />
+        <Route path="/addProduct" element={<AddProductsPage />} />
       </Routes>
     </div>
   );

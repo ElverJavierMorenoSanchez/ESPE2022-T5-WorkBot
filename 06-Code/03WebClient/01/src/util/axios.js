@@ -1,6 +1,6 @@
 import axios from "axios";
-//const baseUrl = "http://35.173.221.196:3017/products";
-const baseUrl = "http://localhost:5500/products";
+const baseUrl = "http://3.86.165.121:3017/products";
+//const baseUrl = "http://localhost:5500/products";
 
 export async function GetProducts() {
   const token = localStorage.getItem("token");

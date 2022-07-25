@@ -1,48 +1,67 @@
-*{
+.bg {
     background: url('http://cocinarte.co/wp-content/uploads/2017/03/Sal%C3%B3n-de-la-pasteler%C3%ADa-y-reposter%C3%ADa.jpg') fixed;
     background-size: cover;
+    height: 100vh;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
 }
 
-h2{
+.bg h2 {
     width: 100%;
     font-size: 30px;
     font-weight: 800;
     color: aliceblue;
-    display:flex;
+    display: flex;
     justify-content: center;
     justify-items: center;
     background: black;
 }
 
-form{
+.bg .container {
+    background: rgb(255, 219, 219);
+    width: 600px;
+    margin: auto;
+    margin-top: 75px;
+    border-radius: 15px;
+    box-shadow: 1px 1px 20px rgb(255, 197, 197);
+}
+
+.bg form {
     color: black;
     width: 100%;
-    max-width: 200px;
-    margin: 0 auto;
+    max-width: 600px;
+    margin: auto;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    padding: 20px;
 }
 
-form label{
-    color: azure;
+.bg form label {
+    color: rgb(0, 0, 0);
     font-size: 20px;
-    
+
 }
 
-form input{
-    width: 90%;
+.bg form input {
+    width: 100%;
     height: 30px;
     margin: 0.5rem;
     border-radius: 0.5em;
     background: white;
+    padding: 15px
 }
 
-form button{
+.bg form button {
     margin: 0.5em;
     padding: 0.5em 1em;
     border-radius: 0.5em;
     background: rgb(191, 33, 227);
 }
 
+.bg .btn.btn-exit {
+    margin: 0;
+    margin-bottom: 30px;
+}

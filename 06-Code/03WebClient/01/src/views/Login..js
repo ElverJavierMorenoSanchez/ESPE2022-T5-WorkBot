@@ -25,7 +25,7 @@ const Login = () => {
 
   const handleLogin = async (e) => {
     e.preventDefault();
-    let token = await fetch("http://localhost:5500/auth/signIn", {
+    let token = await fetch("http://3.86.165.121:3017/auth/signIn", {
       method: "post",
       body: JSON.stringify({ email, password }),
       headers: {
@@ -39,7 +39,12 @@ const Login = () => {
       alert(token.message);
     } else {
       localStorage.setItem("token", token.token);
-      navigate("/home");
+
+      if (email === "admin1@gmail.com") {
+        navigate("/addProduct");
+      } else {
+        navigate("/home");
+      }
     }
   };
   return (
