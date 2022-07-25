@@ -19,7 +19,11 @@ function TopBar() {
       </Link>
 
       <ul className="navigation">
-        <ButtonOptionMenu name="Inicio" href="/" toggleMenu={toggleMenu()} />
+        <ButtonOptionMenu
+          name="Inicio"
+          href="/home"
+          toggleMenu={toggleMenu()}
+        />
         <ButtonOptionMenu
           name="Productos"
           href="/products"
