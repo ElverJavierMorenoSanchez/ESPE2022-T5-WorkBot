@@ -29,9 +29,9 @@ function ProductPage() {
             <span></span>
           </h2>
         </div>
-        <div class="content">
-          {products.map((product) => (
-            <Product product={product} />
+        <div className="content">
+          {products.map((product, index) => (
+            <Product key={index} product={product} />
           ))}
         </div>
       </section>

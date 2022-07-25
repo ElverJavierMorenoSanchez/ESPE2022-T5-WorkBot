@@ -1,24 +1,31 @@
 import axios from "axios";
+//const baseUrl = "http://35.173.221.196:3017/products";
 const baseUrl = "http://localhost:5500/products";
 
 export async function GetProducts() {
+  const token = localStorage.getItem("token");
   try {
     const response = await axios.get(baseUrl, {
       headers: {
-        "access-token":
-          "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYyZGI0M2EyOWExZGI3ZDJhOGU5M2E3MiIsImlhdCI6MTY1ODUzNzMzNCwiZXhwIjoxNjU4NjIzNzM0fQ.44UYTg6clnTQWnhNQ5htZ1At89v1ognvRXBTmQ9HeHI",
+        "access-token": token,
       },
     });
-    /*
-    const response = await axios.post(baseUrl, {
-      data: {
-        email: "admin@gmail.com",
-        password: "admin123",
-      },
-    });
-*/
-    //console.log(response);
     return response.data;
+  } catch (error) {
+    console.log(error);
+  }
+}
+
+export async function postProducts(product) {
+  const token = localStorage.getItem("token");
+  try {
+    const response = await axios.post(baseUrl, {
+      headers: {
+        "access-token": token,
+      },
+      data: product,
+    });
+    console.log(response);
   } catch (error) {
     console.log(error);
   }

@@ -38,37 +38,9 @@ function TopBar() {
         />
       </ul>
 
-      <ButtonOption href="" className="singIn" text="INICIAR SESIÓN" />
+      <ButtonOption href="/login" className="singIn" text="CERRAR SESIÓN" />
     </header>
   );
 }
 
 export default TopBar;
-
-/*
-function uploadContent(url, elemento) {
-    var request = new XMLHttpRequest();
-    request.open("GET", url, false);
-    request.send(null);
-    elemento.innerHTML = request.responseText;
-}
-
-uploadContent("jsps/header.jsp", document.querySelector('#header'));
-uploadContent("jsps/footer.jsp", document.querySelector('#footer'));
-
-
-
-function toggleMenu() {
-  const menuToggle = document.querySelector(".menuToggle");
-  const navigation = document.querySelector(".navigation");
-  menuToggle.classList.toggle("active");
-  navigation.classList.toggle("active");
-}
-
-
-let menuToggle = document.querySelector('.menuToggle');
-let navigationUser = document.querySelector('.navigationUser');
-
-menuToggle.click(function () {
-    navigationUser.toggleClass('active');
-});*/
