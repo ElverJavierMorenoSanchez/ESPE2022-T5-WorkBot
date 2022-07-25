@@ -1,4 +1,4 @@
-import "../styles/Produc.css";
+import "../styles/User.css";
 import React, { useState } from "react";
 import { useNavigate, Link } from "react-router-dom";
 import ComponenInput from "../components/ComponentAddProduct/componentInput";
@@ -50,7 +50,7 @@ const User = () => {
 
   return (
     <div className="bg">
-      <h2>ADMINISTRAR PRODUCTOS</h2>
+      <h2>ADMINISTRAR USUARIOS</h2>
       <div className="container" style={{ marginTop: "50px" }}>
         <form onSubmit={handleSave}>
           <ComponenInput text="Nombre" setValue={setName} />
