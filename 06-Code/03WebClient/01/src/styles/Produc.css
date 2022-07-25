@@ -1,0 +1,48 @@
+*{
+    background: url('http://cocinarte.co/wp-content/uploads/2017/03/Sal%C3%B3n-de-la-pasteler%C3%ADa-y-reposter%C3%ADa.jpg') fixed;
+    background-size: cover;
+}
+
+h2{
+    width: 100%;
+    font-size: 30px;
+    font-weight: 800;
+    color: aliceblue;
+    display:flex;
+    justify-content: center;
+    justify-items: center;
+    background: black;
+}
+
+form{
+    color: black;
+    width: 100%;
+    max-width: 200px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+form label{
+    color: azure;
+    font-size: 20px;
+    
+}
+
+form input{
+    width: 90%;
+    height: 30px;
+    margin: 0.5rem;
+    border-radius: 0.5em;
+    background: white;
+}
+
+form button{
+    margin: 0.5em;
+    padding: 0.5em 1em;
+    border-radius: 0.5em;
+    background: rgb(191, 33, 227);
+}
+
