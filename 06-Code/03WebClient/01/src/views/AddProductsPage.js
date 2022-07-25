@@ -1,5 +1,5 @@
 import "../styles/Produc.css";
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import ComponenInput from "../components/ComponentAddProduct/componentInput";
 
@@ -41,7 +41,7 @@ const Product = () => {
     if (product.message) {
       alert(product.message);
     } else {
-      localStorage.setItem("token", product.token);
+      alert("Producto Guardado Correctamente");
     }
   };
 

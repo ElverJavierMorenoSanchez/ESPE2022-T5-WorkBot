@@ -1,6 +1,5 @@
 import "./App.css";
-import React, { useEffect } from "react";
-import { useNavigate } from "react-router-dom";
+import React from "react";
 import ProductPage from "./views/ProductPage";
 import TopBar from "./components/ComponentsTopBar/TopBar";
 import Footer from "./components/ComponentsFooter/Footer";
@@ -8,13 +7,15 @@ import HomePage from "./views/HomePage";
 import { Routes, Route } from "react-router-dom";
 import Login from "./views/Login.";
 import AddProductsPage from "./views/AddProductsPage";
+import UserPage from "./views/UserPage";
 
 function App() {
   return (
     <div className="App">
       <Routes>
-        <Route path="/" element={<Login />} />
+        <Route path="/" element={<UserPage />} />
         <Route path="/login" element={<Login />} />
+        <Route path="/signUp" element={<UserPage />} />
 
         <Route
           path="/products"

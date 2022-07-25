@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from "react";
 import { useNavigate, Link } from "react-router-dom";
+import Typography from "@mui/material/Typography";
 import Container from "@mui/material/Container";
 import Avatar from "@mui/material/Avatar";
 import Grid from "@mui/material/Grid";
-import Typography from "@mui/material/Typography";
 import TextField from "@mui/material/TextField";
 import Button from "@mui/material/Button";
 import Box from "@mui/material/Box";
@@ -40,7 +40,7 @@ const Login = () => {
     } else {
       localStorage.setItem("token", token.token);
 
-      if (email === "admin1@gmail.com") {
+      if (email === "admin@gmail.com") {
         navigate("/addProduct");
       } else {
         navigate("/home");
