@@ -9,6 +9,7 @@ import Button from "@mui/material/Button";
 import Box from "@mui/material/Box";
 import LockIcon from "@mui/icons-material/Lock";
 import bg from "../img/bg/bg2.jpg";
+import { getToken } from "../util/axios";
 
 const Login = () => {
   const [email, setEmail] = useState("");
@@ -16,8 +17,8 @@ const Login = () => {
   const navigate = useNavigate();
 
   useEffect(() => {
-    //const token = localStorage.setItem("token", "");
-    const token = localStorage.getItem("token");
+    const token = localStorage.setItem("token", "");
+    //const token = localStorage.getItem("token");
     if (token) {
       navigate("/home");
     }
@@ -25,15 +26,8 @@ const Login = () => {
 
   const handleLogin = async (e) => {
     e.preventDefault();
-    let token = await fetch("http://localhost:3017/auth/signIn", {
-      method: "post",
-      body: JSON.stringify({ email, password }),
-      headers: {
-        "Content-Type": "application/json",
-      },
-    });
-    token = await token.json();
-    console.log(token);
+
+    const token = await getToken(email, password);
 
     if (!token.token) {
       alert(token.message);

@@ -3,6 +3,7 @@ import React, { useState } from "react";
 import { useNavigate, Link } from "react-router-dom";
 import ComponenInput from "../components/ComponentAddProduct/componentInput";
 import Typography from "@mui/material/Typography";
+import { postUser } from "../util/axios";
 
 const User = () => {
   const navigate = useNavigate();
@@ -19,25 +20,18 @@ const User = () => {
   const handleSave = async (e) => {
     e.preventDefault();
 
-    console.log(name, surname, address, city, phone, email, username, password);
+    const user = {
+      name,
+      surname,
+      address,
+      city,
+      phone,
+      email,
+      username,
+      password,
+    };
 
-    let token = await fetch("http://localhost:3017/auth/signUp", {
-      method: "post",
-      body: JSON.stringify({
-        name,
-        surname,
-        address,
-        city,
-        phone,
-        email,
-        username,
-        password,
-      }),
-      headers: {
-        "Content-Type": "application/json",
-      },
-    });
-    token = await token.json();
+    const token = await postUser(user);
     console.log(token);
 
     if (token.message) {

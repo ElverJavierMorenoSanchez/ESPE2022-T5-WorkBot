@@ -2,6 +2,7 @@ import "../styles/Produc.css";
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import ComponenInput from "../components/ComponentAddProduct/componentInput";
+import { postProducts } from "../util/axios";
 
 const Product = () => {
   const navigate = useNavigate();
@@ -17,25 +18,14 @@ const Product = () => {
   const handleSave = async (e) => {
     e.preventDefault();
 
-    console.log(id, name, price, quantity, description, imgUrl);
-
-    let product = await fetch("http://localhost:3017/products", {
-      method: "post",
-      body: JSON.stringify({
-        id,
-        name,
-        category,
-        price,
-        quantity,
-        description,
-        imgUrl,
-      }),
-      headers: {
-        "Content-Type": "application/json",
-        "access-token": localStorage.getItem("token"),
-      },
+    const product = await postProducts({
+      id,
+      name,
+      price,
+      quantity,
+      description,
+      imgUrl,
     });
-    product = await product.json();
     console.log(product);
 
     if (product.message) {
