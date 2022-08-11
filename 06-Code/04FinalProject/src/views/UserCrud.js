@@ -1,56 +1,66 @@
-import { Box } from "@mui/system";
 import React, { useEffect, useState } from "react";
+import { Box } from "@mui/system";
 import { DataGrid } from "@mui/x-data-grid";
-import { Link } from "react-router-dom";
 import IconButton from "@mui/material/IconButton";
 import ModeIcon from "@mui/icons-material/Mode";
 import DeleteIcon from "@mui/icons-material/Delete";
-import { getCreditCards, deleteCreditCard } from "../util/creditCardAxios";
+import { getUsers, deleteUser } from "../util/userAxios";
+import UserModalForm from "./UserModalForm";
 
-function CreditCardCrud() {
-  const [creditCards, setCreditCards] = useState([]);
+function UserCrud() {
+  const [users, setUsers] = useState([]);
+  const [user, setUser] = useState({});
+  const [editable, setEditable] = useState(false);
+  const [open, setOpen] = useState(false);
 
   useEffect(() => {
-    const loadCreditCards = async () => {
-      const _creditCards = await getCreditCards();
-
-      setCreditCards(_creditCards);
-    };
-
-    loadCreditCards();
+    loadUsers();
   }, []);
 
+  const loadUsers = async () => {
+    const _users = await getUsers();
+
+    setUsers(_users);
+  };
+
+  const handleEditable = (edit) => setEditable(edit);
+  const handleClose = () => setOpen(false);
+  const handleOpen = (params) => {
+    setUser(params);
+    setOpen(true);
+  };
+
   const handleDelete = async (id) => {
-    console.log(id);
-    //const itemDelete = await deleteCreditCard(id);
+    const confirm = window.confirm(
+      "¿Está seguro que desea eliminar el elemento?"
+    );
+    if (confirm) {
+      const itemDelete = await deleteUser(id);
+      loadUsers();
+      console.log(itemDelete);
+    }
   };
 
   const columns = [
-    {
-      field: "key",
-      headerName: "ID",
-      width: 250,
-    },
-    {
-      field: "own_card",
-      headerName: "Dueño Tarjeta",
-      width: 200,
-    },
-    { field: "number_card", headerName: "Número Tarjeta", width: 200 },
-    { field: "date_expiry", headerName: "Fecha de Expiración", width: 150 },
-    { field: "security_code", headerName: "Código de Seguridad", width: 150 },
+    { field: "key", headerName: "ID", width: 230 },
+    { field: "name", headerName: "Nombre", width: 150 },
+    { field: "surname", headerName: "Apellido", width: 150 },
+    { field: "username", headerName: "Nombre de Usuario", width: 150 },
+    { field: "address", headerName: "Dirección", width: 200 },
+    { field: "phone", headerName: "Celular", width: 110 },
+    { field: "email", headerName: "Email", width: 200 },
     {
       field: "options",
       headerName: "Opciones",
       width: 150,
       renderCell: (params) => (
         <>
-          <a
+          <div
             target="_blank"
             rel="noreferrer"
             onClick={() => {
-              handleDelete(params.row.key);
-              return;
+              handleEditable(true);
+              handleOpen(params.row);
             }}
           >
             <IconButton
@@ -68,9 +78,9 @@ function CreditCardCrud() {
                 }}
               />
             </IconButton>
-          </a>
+          </div>
 
-          <a
+          <div
             onClick={() => {
               handleDelete(params.row.key);
               return;
@@ -91,46 +101,72 @@ function CreditCardCrud() {
                 }}
               />
             </IconButton>
-          </a>
+          </div>
         </>
       ),
     },
   ];
 
   return (
-    <Box
-      sx={{
-        width: "75%",
-        height: "700px",
-        justifyContent: "center",
-        display: "flex",
-        alignItems: "center",
-        flexDirection: "column",
-        paddingLeft: "20px",
-        paddingRight: "20px",
-        background: "#fff",
-        borderRadius: "15px",
-        boxShadow: "1px 1px 20px #333",
-      }}
-    >
-      <h1>Tarjetas de Crédito</h1>
-      <div style={{ height: "100%", width: "100%" }}>
-        <DataGrid
-          rows={creditCards.map((item) => ({
-            key: item._id,
-            id: item.id,
-            own_card: item.ownCard,
-            number_card: item.numberCard,
-            date_expiry: item.dateExpiry,
-            security_code: item.securityCode,
-          }))}
-          columns={columns}
-          pageSize={10}
-          rowsPerPageOptions={[10]}
+    <>
+      <div id="header"></div>
+      {open ? (
+        <UserModalForm
+          handleClose={handleClose}
+          user={user}
+          editable={editable}
+          loadData={loadUsers}
         />
-      </div>
-    </Box>
+      ) : (
+        <></>
+      )}
+      <Box
+        sx={{
+          justifyContent: "center",
+          alignItems: "center",
+          display: "flex",
+          padding: "20px",
+          background: "#fff",
+          marginTop: "50px",
+        }}
+      >
+        <Box
+          sx={{
+            width: "76%",
+            height: "600px",
+            justifyContent: "center",
+            display: "flex",
+            alignItems: "center",
+            flexDirection: "column",
+            paddingLeft: "20px",
+            paddingRight: "20px",
+            background: "#fff",
+            borderRadius: "15px",
+            boxShadow: "1px 1px 20px #333",
+          }}
+        >
+          <h1>Usuarios</h1>
+          <div style={{ height: "100%", width: "100%" }}>
+            <DataGrid
+              rows={users.map((item) => ({
+                id: item._id,
+                key: item._id,
+                name: item.name,
+                surname: item.surname,
+                username: item.username,
+                address: item.address,
+                phone: item.phone,
+                email: item.email,
+              }))}
+              columns={columns}
+              pageSize={10}
+              rowsPerPageOptions={[10]}
+            />
+          </div>
+        </Box>
+      </Box>
+    </>
   );
 }
 
-export default CreditCardCrud;
+export default UserCrud;
