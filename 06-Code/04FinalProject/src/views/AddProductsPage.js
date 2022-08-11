@@ -24,9 +24,9 @@ const Product = () => {
       price,
       quantity,
       description,
+      category,
       imgUrl,
     });
-    console.log(product);
 
     if (product.message) {
       alert(product.message);

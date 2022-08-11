@@ -8,12 +8,14 @@ import { Routes, Route } from "react-router-dom";
 import Login from "./views/Login.";
 import AddProductsPage from "./views/AddProductsPage";
 import UserPage from "./views/UserPage";
+import CreditCardCrud from "./views/CreditCardCrud";
+import InvoiceCrud from "./views/InvoiceCrud";
 
 function App() {
   return (
     <div className="App">
       <Routes>
-        <Route path="/" element={<Login />} />
+        <Route path="/" element={<InvoiceCrud />} />
         <Route path="/login" element={<Login />} />
         <Route path="/signUp" element={<UserPage />} />
 

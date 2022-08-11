@@ -2,9 +2,20 @@ import React, { useState, useEffect } from "react";
 import Product from "../components/ComponentsProductPage/Product";
 import { GetProducts } from "../util/axios";
 import "../styles/ProductPage.css";
+import Cart from "../components/ComponentsCart/Cart";
 
 function ProductPage() {
   const [products, setProducts] = useState([]);
+
+  const [cart, setCart] = useState([]);
+
+  const handleAddItem = (product) => {
+    setCart([...cart, product]);
+  };
+
+  const emptyCart = () => {
+    setCart([]);
+  };
 
   useEffect(() => {
     async function getProducts() {
@@ -15,9 +26,22 @@ function ProductPage() {
     getProducts();
   }, []);
 
+  const setInvoice = async () => {
+    const invoice = {
+      quantity: 3,
+      detail: "Bandeja De Galletas",
+      priceUnit: 0.4,
+      total: 1.2,
+      id: 1,
+      productId: 1,
+      username: "valyn",
+    };
+  };
+
   return (
     <>
       <div id="header"></div>
+      <Cart cart={cart} emptyCart={emptyCart} />
       <div className="products">
         <h2 className="titleText">
           NUESTROS <span>P</span>RODUCTOS
@@ -31,7 +55,11 @@ function ProductPage() {
         </div>
         <div className="content">
           {products.map((product, index) => (
-            <Product key={index} product={product} />
+            <Product
+              key={index}
+              product={product}
+              handleAddItem={handleAddItem}
+            />
           ))}
         </div>
       </section>

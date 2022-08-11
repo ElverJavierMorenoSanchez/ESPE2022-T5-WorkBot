@@ -32,7 +32,6 @@ const User = () => {
     };
 
     const token = await postUser(user);
-    console.log(token);
 
     if (token.message) {
       alert(token.message);

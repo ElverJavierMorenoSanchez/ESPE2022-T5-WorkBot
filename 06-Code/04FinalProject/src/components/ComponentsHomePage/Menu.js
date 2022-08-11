@@ -33,6 +33,7 @@ function Menu() {
                 title={product.name}
               />
             );
+          else return;
         })}
       </div>
 

@@ -1,4 +1,4 @@
-header{
+header {
     position: fixed;
     top: 0;
     left: 0;
@@ -10,51 +10,62 @@ header{
     align-items: center;
     transition: .3s;
 }
-header.sticky{
+
+header.sticky {
     background: #fff;
     padding: 10px 100px;
     box-shadow: 0 5px 20px rgba(0, 0, 0, .05);
 }
-header .logo{
+
+header .logo {
     color: #fff;
     font-weight: 700;
     font-size: 2em;
     text-decoration: none;
 }
-header.sticky .logo{
+
+header.sticky .logo {
     color: #111;
 }
-header .logo span{
+
+header .logo span {
     color: #ff0156;
 }
-header .navigation{
+
+header .navigation {
     position: relative;
     display: flex;
     margin-right: 100px;
 }
-header .navigation li{
+
+header .navigation li {
     list-style: none;
     margin-right: 30px;
     transition: .5s;
     font-size: 1.08em;
 }
-header .navigation li:hover{
+
+header .navigation li:hover {
     transform: translateY(-5px);
 }
-header .navigation li a{
+
+header .navigation li a {
     text-decoration: none;
     color: #fff;
     font-weight: 300;
     transition: 0.3s;
 }
-header.sticky .navigation li a{
+
+header.sticky .navigation li a {
     color: #111;
     transition: 0.5s;
 }
-header .navigation li a:hover{
+
+header .navigation li a:hover {
     color: #F73375;
 }
-.btn{
+
+.btn {
     font-size: 1em;
     color: #fff;
     background: #ff0157;
@@ -68,7 +79,8 @@ header .navigation li a:hover{
     user-select: none;
     cursor: pointer;
 }
-.singIn{
+
+.singIn {
     font-size: 1em;
     color: #fff;
     background: #ff0157;
@@ -79,21 +91,25 @@ header .navigation li a:hover{
     letter-spacing: 2px;
     transition: .5s;
 }
-.buttonLogin{
+
+.buttonLogin {
     font-size: 1em;
     display: inline-block;
     padding: 10px 30px;
     text-transform: uppercase;
     text-decoration: none;
 }
-.singIn:hover{
+
+.singIn:hover {
     transform: translateY(-3px);
     box-shadow: 0px 0px 10px 6px #FD97B9;
 }
-.btn:hover{
+
+.btn:hover {
     letter-spacing: 6px;
 }
-.shoppingCart{
+
+.shoppingCart {
     position: absolute;
     display: flex;
     height: 40px;
@@ -104,24 +120,28 @@ header .navigation li a:hover{
     visibility: hidden;
     user-select: none;
 }
+
 .shoppingCart a {
     width: 100%;
     height: 100%;
 }
-.shoppingCart .icon{
+
+.shoppingCart .icon {
     position: absolute;
     font-size: 2em;
     color: white;
     transition: 0.3s;
 }
-.shoppingCart .cont{
+
+.shoppingCart .cont {
     font-size: 1.25em;
     padding-left: 3px;
     text-align: center;
     transition: 0.3s;
     color: white;
 }
-.shoppingCart .cartOptions{
+
+.shoppingCart .cartOptions {
     position: absolute;
     display: flex;
     width: 300px;
@@ -137,17 +157,20 @@ header .navigation li a:hover{
     border: 2px solid #000;
     background: #fff;
 }
-.shoppingCart .totalCash{
+
+.shoppingCart .totalCash {
     position: relative;
     width: 90%;
     margin-top: 10px;
     display: flex;
     justify-content: space-between;
 }
-.shoppingCart .totalCash h2{
+
+.shoppingCart .totalCash h2 {
     font-weight: 400;
 }
-.shoppingCart .checkIn{
+
+.shoppingCart .checkIn {
     position: relative;
     width: 75%;
     margin-bottom: 10px;
@@ -155,52 +178,58 @@ header .navigation li a:hover{
     padding: 0;
     margin-top: 0;
 }
-.shoppingCart .checkIn h3{
+
+.shoppingCart .checkIn h3 {
     text-align: center;
 }
 
-.navigationUser{
+.navigationUser {
     position: absolute;
     top: 34px;
     right: 105px;
     width: 120px;
     height: 60px;
-    background: rgba(255,255,255,0);
+    background: rgba(255, 255, 255, 0);
     display: flex;
     justify-content: space-between;
     transition: height 0.3s, width 0.3s, transform 0.5s;
-    transition-delay: 0s,0.45s;
+    transition-delay: 0s, 0.45s;
     overflow: hidden;
     visibility: visible;
 }
-.navigationUser.active{
+
+.navigationUser.active {
     width: 300px;
     height: 340px;
-    background: rgba(255,255,255,1);
+    background: rgba(255, 255, 255, 1);
     transition: width 0.3s, height 0.3s, transform 0.5s;
-    transition-delay: 0s,0.45s;
+    transition-delay: 0s, 0.45s;
 }
-.navigationUser .userBx{
+
+.navigationUser .userBx {
     position: relative;
     width: 60px;
     height: 60px;
-    background: rgba(255,255,255,0);
+    background: rgba(255, 255, 255, 0);
     display: flex;
     align-items: center;
     overflow: hidden;
     transition: 0.3s;
     transition-delay: 0.3s;
 }
-.navigationUser.active .userBx{
+
+.navigationUser.active .userBx {
     width: calc(100% - 60px);
     transition-delay: 0s;
 }
-.navigationUser .userBx .username{
+
+.navigationUser .userBx .username {
     white-space: nowrap;
     color: #555;
     font-size: 1.1em;
 }
-.navigationUser .userBx .imgBx{
+
+.navigationUser .userBx .imgBx {
     position: relative;
     min-width: 60px;
     height: 60px;
@@ -208,7 +237,8 @@ header .navigation li a:hover{
     border-radius: 50%;
     border: 2px solid #fff;
 }
-.navigationUser .userBx .imgBx img{
+
+.navigationUser .userBx .imgBx img {
     position: relative;
     top: 0;
     left: 0;
@@ -217,7 +247,7 @@ header .navigation li a:hover{
     object-fit: cover;
 }
 
-.navigationUser .menuToggle{
+.navigationUser .menuToggle {
     position: relative;
     width: 60px;
     height: 60px;
@@ -226,7 +256,8 @@ header .navigation li a:hover{
     justify-content: center;
     align-items: center;
 }
-.navigationUser .menuToggle::before{
+
+.navigationUser .menuToggle::before {
     content: '';
     position: absolute;
     width: 32px;
@@ -236,7 +267,8 @@ header .navigation li a:hover{
     box-shadow: 0 10px #ff0156;
     transition: 0.5s;
 }
-.navigationUser .menuToggle::after{
+
+.navigationUser .menuToggle::after {
     content: '';
     position: absolute;
     width: 32px;
@@ -245,13 +277,16 @@ header .navigation li a:hover{
     transform: translateY(10px);
     transition: 0.5s;
 }
-.navigationUser.active .menuToggle::before{
+
+.navigationUser.active .menuToggle::before {
     transform: translateY(0px) rotate(45deg);
     box-shadow: 0 0 #ff0156;
 }
-.navigationUser.active .menuToggle::after{
+
+.navigationUser.active .menuToggle::after {
     transform: translateY(0px) rotate(-45deg);
 }
+
 .menu {
     position: absolute;
     height: 100%;
@@ -260,10 +295,12 @@ header .navigation li a:hover{
     padding: 20px;
     border-top: 1px solid rgba(0, 0, 0, .1);
 }
+
 .menu li {
     list-style: none;
 }
-.menu li a{
+
+.menu li a {
     display: flex;
     align-items: center;
     gap: 10px;
@@ -272,17 +309,20 @@ header .navigation li a:hover{
     text-decoration: none;
     color: #555;
 }
-.menu li a:hover{
+
+.menu li a:hover {
     color: #ff0156;
 }
-.menu li a ion-icon{
+
+.menu li a ion-icon {
     font-size: 1.5em;
 
 }
 
-header.sticky .singIn:hover{
+header.sticky .singIn:hover {
     box-shadow: 0px 0px 10px 6px #535353;
 }
-header.sticky .navigationUser{
+
+header.sticky .navigationUser {
     transform: translateY(-30px);
 }

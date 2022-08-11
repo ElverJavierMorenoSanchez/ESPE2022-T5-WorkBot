@@ -1,12 +1,15 @@
 import React from "react";
 
 function Product(props) {
+  const clic = () => {
+    props.handleAddItem(props.product);
+  };
   return (
     <div className="box">
       <div className="imgBx">
         <img src={props.product.imgUrl} alt="" />
         <div className="optionCart">
-          <div className="button">
+          <div className="button" onClick={clic}>
             <span className="icon">
               <ion-icon name="cart-outline"></ion-icon>
             </span>
