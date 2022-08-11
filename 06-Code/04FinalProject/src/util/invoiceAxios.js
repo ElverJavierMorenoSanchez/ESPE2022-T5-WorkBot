@@ -21,7 +21,7 @@ export async function postInvoice(body) {
 
 export async function putInvoice(id, body) {
   try {
-    const invoice = await axios.put(`${baseUrl}${id}`, body);
+    const invoice = await axios.put(`${baseUrl}/${id}`, body);
     return invoice.data;
   } catch (error) {
     console.log(error);
@@ -30,7 +30,7 @@ export async function putInvoice(id, body) {
 
 export async function deleteInvoice(id) {
   try {
-    const invoices = await axios.delete(`${baseUrl}${id}`);
+    const invoices = await axios.delete(`${baseUrl}/${id}`);
     return invoices.data;
   } catch (error) {
     console.log(error);
