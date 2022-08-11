@@ -4,7 +4,7 @@ import { DataGrid } from "@mui/x-data-grid";
 import IconButton from "@mui/material/IconButton";
 import ModeIcon from "@mui/icons-material/Mode";
 import DeleteIcon from "@mui/icons-material/Delete";
-import { getUsers, deleteUser } from "../util/userAxios";
+import { getUsers, deleteUser } from "../../util/userAxios";
 import UserModalForm from "./UserModalForm";
 
 function UserCrud() {
