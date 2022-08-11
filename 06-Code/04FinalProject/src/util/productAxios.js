@@ -8,7 +8,7 @@ const baseUrl = 'http://3.86.206.55:3017';
 export async function GetProducts() {
     const token = localStorage.getItem("token");
     try {
-      const response = await axios.get(`${baseUrl}/products`, {
+      const response = await axios.get(`${baseUrl}/`, {
         headers: {
           "access-token": token,
         },
@@ -37,7 +37,7 @@ export async function GetProducts() {
   export async function putProduct(id, product) {
     const token = localStorage.getItem("token");
     try {
-      const response = await axios.put(`${baseUrl}/products/${id}`, {
+      const response = await axios.put(`${baseUrl}/${id}/products`, {
         headers: {
           "access-token": token,
         },
