@@ -1,3 +1,6 @@
+import axios from "axios";
+const baseUrl = "http://3.86.206.55:3017";
+
 export async function getUsers() {
     try {
       const users = await axios.get(`${baseUrl}/users`);
