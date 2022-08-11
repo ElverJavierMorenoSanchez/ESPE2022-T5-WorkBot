@@ -5,7 +5,7 @@ import IconButton from "@mui/material/IconButton";
 import ModeIcon from "@mui/icons-material/Mode";
 import DeleteIcon from "@mui/icons-material/Delete";
 import { GetProducts, deleteProducts } from "../../util/productAxios";
-import ProductModalFrom from "./ProductModalFrom";
+import ProductModalForm from "./ProductModalForm";
 import Button from "@mui/material/Button";
 
 function ProductCrud() {
@@ -112,7 +112,7 @@ function ProductCrud() {
     <>
       <div id="header"></div>
       {open ? (
-        <ProductModalFrom
+        <ProductModalForm
           handleClose={handleClose}
           product={product}
           editable={editable}

@@ -3,7 +3,7 @@ import Box from "@mui/material/Box";
 import Button from "@mui/material/Button";
 import Modal from "@mui/material/Modal";
 import TextField from "@mui/material/TextField";
-import { postInvoice, putInvoice } from "../util/invoiceAxios";
+import { postInvoice, putInvoice } from "../../util/invoiceAxios";
 
 const style = {
   position: "absolute",

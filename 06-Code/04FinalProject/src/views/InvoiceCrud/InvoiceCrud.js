@@ -4,7 +4,7 @@ import { DataGrid } from "@mui/x-data-grid";
 import IconButton from "@mui/material/IconButton";
 import ModeIcon from "@mui/icons-material/Mode";
 import DeleteIcon from "@mui/icons-material/Delete";
-import { getInvoices, deleteInvoice } from "../util/invoiceAxios";
+import { getInvoices, deleteInvoice } from "../../util/invoiceAxios";
 import InvoiceModalForm from "./InvoiceModalForm";
 import Button from "@mui/material/Button";
 

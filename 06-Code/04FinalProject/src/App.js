@@ -10,9 +10,9 @@ import Login from "./views/Login.";
 import AddProductsPage from "./views/AddProductsPage";
 import UserPage from "./views/UserPage";
 import CreditCardCrud from "./views/CreditCardCrud/CreditCardCrud";
-import UserCrud from "./views/UserCrud";
-import InvoiceCrud from "./views/InvoiceCrud";
-import ProductCrud from "./views/ProductCrud";
+import UserCrud from "./views/UserCrud/UserCrud";
+import InvoiceCrud from "./views/InvoiceCrud/InvoiceCrud";
+import ProductCrud from "./views/ProductCrud/ProductCrud";
 
 function App() {
   return (
