@@ -2,7 +2,7 @@ import "../styles/Produc.css";
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import ComponenInput from "../components/ComponentAddProduct/componentInput";
-import { postProducts } from "../util/axios";
+import { postProducts } from "../util/productAxios";
 
 const Product = () => {
   const navigate = useNavigate();

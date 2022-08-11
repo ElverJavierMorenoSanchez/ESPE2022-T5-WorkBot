@@ -35,7 +35,7 @@ const Login = () => {
       localStorage.setItem("token", token.token);
 
       if (email === "admin@gmail.com") {
-        navigate("/addProduct");
+        navigate("/admin/products");
       } else {
         navigate("/home");
       }

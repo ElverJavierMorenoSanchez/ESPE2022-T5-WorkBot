@@ -5,40 +5,34 @@ import { Link } from "react-router-dom";
 import IconButton from "@mui/material/IconButton";
 import ModeIcon from "@mui/icons-material/Mode";
 import DeleteIcon from "@mui/icons-material/Delete";
-import { getCreditCards, deleteCreditCard } from "../util/axios";
+import { getProductCruds, deleteCreditCard } from "../util/axios";
 
-function CreditCardCrud() {
-  const [creditCards, setCreditCards] = useState([]);
+function ProductCrud() {
+  const [ProductCruds, setProductCruds] = useState([]);
 
   useEffect(() => {
-    const loadCreditCards = async () => {
-      const _creditCards = await getCreditCards();
+    const loadProductCruds = async () => {
+      const _ProductCruds = await getProductCruds();
 
-      setCreditCards(_creditCards);
+      setProductCruds(_ProductCruds);
     };
 
-    loadCreditCards();
+    loadProductCruds();
   }, []);
 
   const handleDelete = async (id) => {
     console.log(id);
-    //const itemDelete = await deleteCreditCard(id);
+    //const itemDelete = await deleteProduct(id);
   };
 
   const columns = [
-    {
-      field: "key",
-      headerName: "ID",
-      width: 250,
-    },
-    {
-      field: "own_card",
-      headerName: "Dueño Tarjeta",
-      width: 200,
-    },
-    { field: "number_card", headerName: "Número Tarjeta", width: 200 },
-    { field: "date_expiry", headerName: "Fecha de Expiración", width: 150 },
-    { field: "security_code", headerName: "Código de Seguridad", width: 150 },
+    { field: "key", headerName: "ID", width: 250 },
+    { field: "name", headerName: "Nombre", width: 200 },
+    { field: "category", headerName: "categoria", width: 200 },
+    { field: "description", headerName: "Descripcion", width: 150 },
+    { field: "price", headerName: "Precio", width: 150 },
+    { field: "quantity", headerName: "Cantidad", width: 150 },
+    { field: "imgUrl", headerName: "Imagen", width: 150 },
     {
       field: "options",
       headerName: "Opciones",
@@ -113,16 +107,18 @@ function CreditCardCrud() {
         boxShadow: "1px 1px 20px #333",
       }}
     >
-      <h1>Tarjetas de Crédito</h1>
+      <h1>Productos</h1>
       <div style={{ height: "100%", width: "100%" }}>
         <DataGrid
-          rows={creditCards.map((item) => ({
+          rows={ProductCruds.map((item) => ({
             key: item._id,
             id: item.id,
-            own_card: item.ownCard,
-            number_card: item.numberCard,
-            date_expiry: item.dateExpiry,
-            security_code: item.securityCode,
+            name: item.name,
+            category: item.category,
+            description: item.description,
+            price: item.price,
+            quantity: item.quantity,
+            imgUrl: item.imgUrl,
           }))}
           columns={columns}
           pageSize={10}
@@ -133,4 +129,4 @@ function CreditCardCrud() {
   );
 }
 
-export default CreditCardCrud;
+export default ProductCrud;

@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import Product from "../components/ComponentsProductPage/Product";
-import { GetProducts } from "../util/axios";
+import { GetProducts } from "../util/productAxios";
 import "../styles/ProductPage.css";
 import Cart from "../components/ComponentsCart/Cart";
 
@@ -25,18 +25,6 @@ function ProductPage() {
 
     getProducts();
   }, []);
-
-  const setInvoice = async () => {
-    const invoice = {
-      quantity: 3,
-      detail: "Bandeja De Galletas",
-      priceUnit: 0.4,
-      total: 1.2,
-      id: 1,
-      productId: 1,
-      username: "valyn",
-    };
-  };
 
   return (
     <>
