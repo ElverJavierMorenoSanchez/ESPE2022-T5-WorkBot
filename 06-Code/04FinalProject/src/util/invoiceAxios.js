@@ -1,9 +1,9 @@
 import axios from "axios";
-const baseUrl = 'http://3.86.206.55:3017';
+const baseUrl = 'http://3.86.206.55:3017/username';
 
 export async function getInvoices() {
   try {
-    const invoices = await axios.get(`${baseUrl}/invoices`);
+    const invoices = await axios.get(`${baseUrl}`);
     return invoices.data;
   } catch (error) {
     console.log(error);
@@ -12,7 +12,7 @@ export async function getInvoices() {
 
 export async function postInvoice(body) {
   try {
-    const invoice = await axios.post(`${baseUrl}/invoices`, body);
+    const invoice = await axios.post(`${baseUrl}`, body);
     return invoice.data;
   } catch (error) {
     console.log(error);
@@ -21,7 +21,7 @@ export async function postInvoice(body) {
 
 export async function putInvoice(id, body) {
   try {
-    const invoice = await axios.put(`${baseUrl}/invoices/${id}`, body);
+    const invoice = await axios.put(`${baseUrl}${id}`, body);
     return invoice.data;
   } catch (error) {
     console.log(error);
@@ -30,7 +30,7 @@ export async function putInvoice(id, body) {
 
 export async function deleteInvoice(id) {
   try {
-    const invoices = await axios.delete(`${baseUrl}/invoices/${id}`);
+    const invoices = await axios.delete(`${baseUrl}${id}`);
     return invoices.data;
   } catch (error) {
     console.log(error);
