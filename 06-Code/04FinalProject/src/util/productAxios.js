@@ -1,10 +1,15 @@
 import axios from "axios";
+<<<<<<< Updated upstream
 const baseUrl = "http://3.86.206.55:3017";
+=======
+const baseUrl = 'http://3.86.206.55:3017/products';
+>>>>>>> Stashed changes
 
 /********************** 
     Products Crud
 **********************/
 export async function GetProducts() {
+<<<<<<< Updated upstream
   const token = localStorage.getItem("token");
   try {
     const response = await axios.get(`${baseUrl}/products`, {
@@ -15,6 +20,19 @@ export async function GetProducts() {
     return response.data;
   } catch (error) {
     console.log(error);
+=======
+    const token = localStorage.getItem("token");
+    try {
+      const response = await axios.get(`${baseUrl}/products`, {
+        headers: {
+          "access-token": token,
+        },
+      });
+      return response.data;
+    } catch (error) {
+      console.log(error);
+    }
+>>>>>>> Stashed changes
   }
 }
 
