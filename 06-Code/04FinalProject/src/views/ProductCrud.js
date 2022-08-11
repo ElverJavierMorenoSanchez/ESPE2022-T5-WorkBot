@@ -118,7 +118,7 @@ function ProductCrud() {
             description: item.description,
             price: item.price,
             quantity: item.quantity,
-            imgUrl: item.imgUrl
+            imgUrl: item.imgUrl,
           }))}
           columns={columns}
           pageSize={10}

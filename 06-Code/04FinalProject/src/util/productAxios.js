@@ -1,18 +1,13 @@
 import axios from "axios";
-<<<<<<< Updated upstream
-const baseUrl = "http://3.86.206.55:3017";
-=======
-const baseUrl = 'http://3.86.206.55:3017/products';
->>>>>>> Stashed changes
+const baseUrl = "http://3.86.206.55:3017/products";
 
 /********************** 
     Products Crud
 **********************/
 export async function GetProducts() {
-<<<<<<< Updated upstream
   const token = localStorage.getItem("token");
   try {
-    const response = await axios.get(`${baseUrl}/products`, {
+    const response = await axios.get(`${baseUrl}`, {
       headers: {
         "access-token": token,
       },
@@ -20,30 +15,16 @@ export async function GetProducts() {
     return response.data;
   } catch (error) {
     console.log(error);
-=======
-    const token = localStorage.getItem("token");
-    try {
-      const response = await axios.get(`${baseUrl}/products`, {
-        headers: {
-          "access-token": token,
-        },
-      });
-      return response.data;
-    } catch (error) {
-      console.log(error);
-    }
->>>>>>> Stashed changes
   }
 }
 
 export async function postProducts(product) {
   const token = localStorage.getItem("token");
   try {
-    const response = await axios.post(`${baseUrl}/products`, {
+    const response = await axios.post(`${baseUrl}`, product, {
       headers: {
         "access-token": token,
       },
-      data: product,
     });
     console.log(response);
   } catch (error) {
@@ -54,11 +35,10 @@ export async function postProducts(product) {
 export async function putProduct(id, product) {
   const token = localStorage.getItem("token");
   try {
-    const response = await axios.put(`${baseUrl}/products/${id}`, {
+    const response = await axios.put(`${baseUrl}/${id}`, product, {
       headers: {
         "access-token": token,
       },
-      data: product,
     });
     console.log(response);
   } catch (error) {
@@ -69,7 +49,7 @@ export async function putProduct(id, product) {
 export async function deleteProducts(id) {
   const token = localStorage.getItem("token");
   try {
-    const response = await axios.delete(`${baseUrl}/products/${id}`, {
+    const response = await axios.delete(`${baseUrl}/${id}`, {
       headers: {
         "access-token": token,
       },

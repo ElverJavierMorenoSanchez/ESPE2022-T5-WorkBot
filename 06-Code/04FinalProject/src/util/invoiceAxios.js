@@ -1,5 +1,5 @@
 import axios from "axios";
-const baseUrl = 'http://3.86.206.55:3017/username';
+const baseUrl = "http://3.86.206.55:3017/invoices";
 
 export async function getInvoices() {
   try {

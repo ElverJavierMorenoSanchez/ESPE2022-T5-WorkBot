@@ -26,18 +26,6 @@ function ProductPage() {
     getProducts();
   }, []);
 
-  const setInvoice = async () => {
-    const invoice = {
-      quantity: 3,
-      detail: "Bandeja De Galletas",
-      priceUnit: 0.4,
-      total: 1.2,
-      id: 1,
-      productId: 1,
-      username: "valyn",
-    };
-  };
-
   return (
     <>
       <div id="header"></div>

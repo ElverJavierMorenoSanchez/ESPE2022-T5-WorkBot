@@ -7,10 +7,12 @@ const baseUrl = "http://3.86.206.55:3017";
 
 export async function getToken(email, password) {
   try {
-    const token = await axios.post(`${baseUrl}/auth/signIn`, {
-      email,
-      password,
-    });
+    const token = await axios
+      .post(`${baseUrl}/auth/signIn`, {
+        email,
+        password,
+      })
+      .catch((err) => console.log(err));
     return token.data;
   } catch (error) {
     console.log(error);
