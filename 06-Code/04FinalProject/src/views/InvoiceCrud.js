@@ -5,14 +5,14 @@ import { Link } from "react-router-dom";
 import IconButton from "@mui/material/IconButton";
 import ModeIcon from "@mui/icons-material/Mode";
 import DeleteIcon from "@mui/icons-material/Delete";
-import { getInvoice, deleteInvoice } from "../util/invoiceAxios";
+import { getInvoices, deleteInvoice } from "../util/invoiceAxios";
 
 function InvoiceCrud() {
   const [InvoiceCrud, setInvoiceCrud] = useState([]);
 
   useEffect(() => {
     const loadInvoiceCrud = async () => {
-      const _invoiceCrud = await getInvoiceCrud();
+      const _invoiceCrud = await getInvoices();
 
       setInvoiceCrud(_invoiceCrud);
     };
