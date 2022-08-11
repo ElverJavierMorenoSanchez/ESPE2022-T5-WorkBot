@@ -127,7 +127,6 @@ function InvoiceCrud() {
             detail: item.detail,
             priceUnit: item.priceUnit,
             total: item.total,
-
           }))}
           columns={columns}
           pageSize={10}

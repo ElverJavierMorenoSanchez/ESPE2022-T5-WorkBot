@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import ButtonOption from "../ComponentButton/ButtonOption";
 import MenuProduct from "./MenuProduct";
-import { GetProducts } from "../../util/axios";
+import { GetProducts } from "../../util/productAxios";
 
 function Menu() {
   const [products, setProducts] = useState([]);

@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 import IconButton from "@mui/material/IconButton";
 import ModeIcon from "@mui/icons-material/Mode";
 import DeleteIcon from "@mui/icons-material/Delete";
-import { getCreditCards, deleteCreditCard } from "../util/axios";
+import { getCreditCards, deleteCreditCard } from "../util/creditCardAxios";
 
 function CreditCardCrud() {
   const [creditCards, setCreditCards] = useState([]);
